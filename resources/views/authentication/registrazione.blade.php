@@ -58,7 +58,7 @@
         <p id="reg2" class="regole">× Lettere maiuscole, minuscole e un numero</p>
 
         <div id="pref_acqu" class="campo_form"><span id="testo_pref">Preferenza di acquisto*</span><img
-                src="../Images/arrow-down.png"></div>
+                src="{{ url('Images/arrow-down.png') }}"></div>
 
         <p id="data">Data di nascita</p>
 

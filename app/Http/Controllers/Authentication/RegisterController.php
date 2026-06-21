@@ -40,7 +40,6 @@ class RegisterController extends Controller
             $nuovoUtente->data_nascita = $dataNascita;
             $nuovoUtente->save();
 
-            $nuovoUtente = User::where('email', session('email'))->first();
             $idUtente = $nuovoUtente->id;
 
             if ($idUtente === null) {

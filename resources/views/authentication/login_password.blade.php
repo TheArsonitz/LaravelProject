@@ -32,7 +32,7 @@
 
     @if (request('errore') === 'password_errata')
         <div id = 'pass_sbagl'>
-            <img src='../Images/exclamation.png'>
+            <img src='{{ url('Images/exclamation.png') }}'>
             <span>Le credenziali non sono valide </span>
         </div>
     @endif

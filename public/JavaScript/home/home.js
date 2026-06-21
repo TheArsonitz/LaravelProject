@@ -797,14 +797,14 @@ function apriMenuMobile() {
             sezioneAccount.id = "sezione-account-mobile";
             sezioneAccount.textContent = "Gestione Account";
             sezioneAccount.classList.add("link-pannello");
-            sezioneAccount.href = "../gestione_account/account.php";
+            sezioneAccount.href = urlGestioneAccount;
             pannelloLaterale.appendChild(sezioneAccount);
 
             const btnEsci = document.createElement("div");
             btnEsci.id = "bottone-logout";
             const testoEsci = document.createElement("a");
             testoEsci.textContent = "Esci";
-            testoEsci.href = "../authentication/logout.php";
+            testoEsci.href = urlLogout;
             btnEsci.appendChild(testoEsci);
             pannelloLaterale.appendChild(btnEsci);
 
@@ -814,7 +814,7 @@ function apriMenuMobile() {
             btnAccedi.id = "bottone-accesso";
             const testoAccedi = document.createElement("a");
             testoAccedi.textContent = "Accedi/Registrati";
-            testoAccedi.href = "../authentication/login.php";
+            testoAccedi.href = urlLogin;
             btnAccedi.appendChild(testoAccedi);
             pannelloLaterale.appendChild(btnAccedi);
 
