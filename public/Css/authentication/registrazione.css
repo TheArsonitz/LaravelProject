@@ -1,0 +1,371 @@
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+article {
+    height: auto;
+    width: 460px;
+    display: flex;
+    flex-direction: column;
+}
+
+#loghi {
+    height: 100px;
+    width: 460px;
+    display: flex;
+    align-items: center;
+}
+
+#nike {
+    width: auto;
+    height: 17px;
+    margin-right: 15px;
+}
+
+
+#jordan {
+    width: 36px;
+    height: auto;
+}
+
+h1 {
+    margin: 0 0 12px 0;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+#dati_registrazione {
+    margin: 0 0 25px 0;
+    padding: 2 0 0 0;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+#email {
+    margin-right: 8px;
+}
+
+#modifica {
+    color: #707072;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+#form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo_form {
+    padding: 16px 16px 16px 12px;
+    border-radius: 8px;
+    border: 1px solid rgb(71, 70, 70);
+    font-size: medium;
+    outline: none;
+    margin-bottom: 25px;
+}
+
+#container_nomcogn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#form_nome,
+#form_cognome {
+    width: 41%;
+}
+
+#form_password {
+    width: 432px;
+    margin-bottom: 3px;
+}
+
+.campo_form:placeholder-shown {
+    font-weight: 600;
+    font-size: medium;
+}
+
+.regole {
+    font-size: small;
+    color: #707072;
+    margin: 5px 0 3px 12px;
+}
+
+#reg2 {
+    margin-bottom: 25px;
+}
+
+#pref_acqu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #707072;
+    font-weight: bold;
+    padding: 12px 16px 12px 12px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#pref_acqu img {
+    width: 25px;
+    height: 25px;
+}
+
+
+#data {
+    margin: 5px 0 12px 12px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#container_data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#form_giorno {
+    width: 20%;
+}
+
+#form_mese {
+    width: 20%;
+}
+
+#form_anno {
+    width: 35%;
+}
+
+.container_checkbox {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.container_checkbox a {
+    font-weight: bold;
+    color: black;
+}
+
+#registrazione_button {
+    padding: 14px 25px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 25px;
+    margin-left: auto;
+}
+
+#registrazione_button:hover {
+    background-color: #333333;
+}
+
+#tendina_preferenza {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    background-color: white;
+    border: 1px solid black;
+    margin-top: 1px;
+    z-index: 10;
+}
+
+#tendina_preferenza.hidden {
+    display: none;
+}
+
+.scelta {
+    padding: 3px 3px;
+    font-size: smaller;
+    text-align: left;
+    color: black;
+    font-weight: 500;
+}
+
+.scelta:hover {
+    background-color: #0D6EFD
+}
+
+.hidden {
+    display: none;
+}
+
+.errore {
+    color: rgb(179, 22, 22);
+    font-size: small;
+}
+
+#necessario.errore,
+#necessario.errore a {
+    color: rgb(179, 22, 22);
+    font-size: inherit;
+}
+
+#form_password.errore,
+#form_nome.errore,
+#form_cognome.errore,
+#form_giorno.errore,
+#form_mese.errore,
+#form_anno.errore {
+    border-color: rgb(179, 22, 22);
+}
+
+#reg1.errore {
+    color: rgb(179, 22, 22);
+    font-size: small;
+}
+
+#pref_acqu.errore {
+    border-color: rgb(179, 22, 22);
+    font-size: inherit;
+}
+
+#nome_err {
+    position: absolute;
+    left: 10px;
+    bottom: 88.4%;
+    font-size: 11px;
+}
+
+#cognome_err {
+    position: absolute;
+    right: 140.5px;
+    bottom: 88.4%;
+    font-size: 11px;
+}
+
+#preferenza_err {
+    position: absolute;
+    left: 10px;
+    bottom: 53.3%;
+    font-size: 11px;
+}
+
+#data_err {
+    position: absolute;
+    left: 10px;
+    bottom: 34.6%;
+    font-size: 11px;
+}
+
+#errore_form {
+    width: auto;
+    background-color: #e9e9e9;
+    display: flex;
+    align-items: center;
+    padding: 10px 16px 10px 16px;
+    margin-bottom: 15px;
+}
+
+#pass_sbagl img {
+    width: 30px;
+    height: 30px;
+}
+
+#pass_sbagl span {
+    font-size: medium;
+}
+
+
+/*Inizio media query*/
+
+@media (max-width: 768px) {
+
+    article {
+        width: auto; 
+        margin: 0 24px; 
+        height: auto;
+    }
+
+    #loghi {
+        height: 60px;
+        width: 100%; 
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #form {
+        align-items: stretch;
+    }
+
+    #form_password, 
+    #pref_acqu, 
+    #container_nomcogn, 
+    #container_data {
+        width: auto;         
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #container_nomcogn { 
+        margin-bottom: 20px; 
+    }
+
+    #form_password { 
+        margin-bottom: 16px; 
+    }
+
+    #pref_acqu { 
+        margin-bottom: 20px; 
+    }
+
+    
+    #container_data { 
+        margin-bottom: 20px; 
+    }
+
+    #container_nomcogn .campo_form {
+        width: 40%; 
+        margin-bottom: 0;
+    }
+
+    #container_data .campo_form {
+        width: 23%; 
+        margin-bottom: 0;
+    }
+
+    #registrazione_button {
+        width: 100%;        
+        padding: 14px 0;    
+        margin-top: 24px;
+    }
+
+    #nome_err {
+        position: absolute;
+        top: 53px;   
+        left: 12px;
+    }
+
+    #cognome_err {
+        position: absolute;
+        top: 53px;
+        right: 92px; 
+    }
+
+    #preferenza_err {
+        position: absolute;
+        top: 263px;  
+        left: 12px;
+    }
+
+    #data_err {
+        position: absolute;
+        top: 367px;
+        left: 12px;
+    }
+
+}

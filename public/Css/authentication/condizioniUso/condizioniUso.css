@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+article {
+    margin: 0 25% 0 25%;
+    padding: 120px 16px 12px 16px;
+    color: #707072;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3{
+    font-size: 14px;
+}
+
+p {
+    font-size: 13px;
+}
+
+.importante {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    article {
+        margin: 0 10% 0 10%;
+        padding-top: 60px;
+    }
+}

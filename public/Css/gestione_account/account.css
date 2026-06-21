@@ -1,0 +1,1390 @@
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+/* Parte superiore della barra di navigazione */
+
+#top-nav {
+    background-color: #F5F5F5;
+    height: 36px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+}
+
+#top-nav-imgs {
+    padding-left: 56px;
+    padding-top: 5px
+}
+
+#jrdn-logo {
+    width: 16.85px;
+    height: 16px;
+    padding-right: 24px;
+}
+
+#cnvrs-logo {
+    width: 33px;
+    height: 15px;
+}
+
+#menu {
+    font-size: 12px;
+    color: #111111;
+    font-weight: 600;
+    padding-right: 48px;
+    text-decoration: none;
+}
+
+#menu a {
+    color: #111111;
+    text-decoration: none;
+}
+
+#menu a:hover {
+    color: #707072;
+}
+
+.divider {
+    padding: 0px 8px;
+}
+
+#help-container {
+    display: inline-block;
+    position: relative;
+    padding: 10px 0px;
+}
+
+#help-panel {
+    display: none;
+    position: absolute;
+    z-index: 10;
+}
+
+#help-container:hover #help-panel {
+    display: block;
+    width: 214px;
+    height: 306px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 12px 16px 12px 12px;
+    top: 35px;
+    left: -184.188px;
+}
+
+#help-menu-panel {
+    width: 134px;
+    height: 306px;
+    margin-left: 12px;
+}
+
+#help-menu-panel-title {
+    display: inline-block;
+    padding-bottom: 12px;
+}
+
+#help-menu-panel-title a {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+#help-menu-panel-title a:hover {
+    color: rgb(17, 17, 17);
+}
+
+.help-menu-panel-section {
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+#help-menu-panel .help-menu-panel-section a {
+    color: rgb(112, 112, 114);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+#help-menu-panel .help-menu-panel-section a:hover {
+    color: #111111;
+}
+
+#login-container {
+    display: inline-block;
+    position: relative;
+    padding: 10px 0px;
+}
+
+#login-panel {
+    display: none;
+    position: absolute;
+    z-index: 10;
+}
+
+#login-container:hover #login-panel {
+    display: block;
+    width: 214px;
+    height: auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 12px 16px 12px 12px;
+    top: 38px;
+    right: 13px;
+}
+
+#login-menu-panel {
+    width: 134px;
+    height: auto;
+    margin-left: 12px;
+}
+
+#login-menu-panel-title {
+    display: inline-block;
+    padding-bottom: 12px;
+}
+
+#login-menu-panel-title a {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+#login-menu-panel-title a:hover {
+    color: rgb(17, 17, 17);
+}
+
+.login-menu-panel-section {
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+#login-menu-panel .login-menu-panel-section a {
+    color: rgb(112, 112, 114);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+#login-menu-panel .login-menu-panel-section a:hover {
+    color: #111111;
+}
+
+#login-container img {
+    width: 15px;
+    height: 15px;
+
+    margin-left: 5px;
+}
+
+
+/* Parte inferiore della barra di navigazione */
+
+#bottom-nav {
+    height: 60px;
+    width: 100%;
+    background-color: white;
+
+    position: fixed;
+    top: 36px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9;
+}
+
+#nike-logo {
+    width: 65.85px;
+    height: 22.54px;
+}
+
+#bottom-nav-imgs {
+    margin-left: 48px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+
+#search-bar {
+    width: 168px;
+    height: 36px;
+    background-color: #F5F5F5;
+    border-radius: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: text;
+}
+
+#search-bar img {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+#search-bar span {
+    margin-left: 10px;
+    color: #757575;
+    font-weight: 500;
+}
+
+#favourite-products {
+    display: inline-block;
+    margin-left: 20px;
+    position: relative;
+}
+
+#favourite-products img {
+    width: 22px;
+    height: 22px;
+}
+
+#shopping-bag-products {
+    display: inline-block;
+    margin-right: 64px;
+    margin-left: 20px;
+    position: relative;
+}
+
+#shopping-bag-products img {
+    width: 20px;
+    height: 20px;
+}
+
+.overlay {
+    display: none;
+    background-color: rgba(211, 203, 203, 0.459);
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+}
+
+#favourite-products:hover #favourite-products-overlay {
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+    right: -4px;
+    top: -5px;
+}
+
+#shopping-bag-products:hover #shopping-bag-overlay {
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+    right: -4px;
+    bottom: -2px;
+}
+
+#mobile-menu-btmnav {
+    display: none;
+    position: relative;
+}
+
+#mobile-menu-btmnav .linea {
+    width: 18px;
+    height: 2px;
+    background-color: #111111;
+    margin: 5px 0;
+    border-radius: 2px;
+}
+
+#mobile-menu-btmnav:hover #mobile-menu-overlay {
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+    right: -6px;
+    bottom: -2px;
+}
+
+#mobile-user-icon {
+    display: none;
+    position: relative;
+}
+
+#mobile-user-icon img {
+    height: 20px;
+    width: 20px;
+}
+
+#mobile-user-icon:hover #user-icon-overlay {
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+    right: -5px;
+    bottom: -2px;
+}
+
+#mobile-search-bar {
+    display: none;
+    position: relative;
+}
+
+#mobile-search-bar img {
+    width: 20px;
+    height: 20px;
+}
+
+#mobile-search-bar:hover #mobile-search-overlay {
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+    right: -5px;
+    bottom: -1px;
+}
+
+.categories {
+    margin-left: 190px;
+    display: flex;
+}
+
+.categories a span {
+    margin: 0 9px;
+}
+
+.categories a {
+    text-decoration: none;
+    color: #111111;
+    font-weight: bold;
+}
+
+.categories-panel {
+    padding: 10px 0;
+    /* Serve per non aumentare l'area del block per l'hover */
+}
+
+.categories-panel a span:hover {
+    padding-bottom: 4px;
+    border-bottom: 2px solid black;
+}
+
+.panel-menu-ctgrs {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: white;
+    width: 100%;
+}
+
+.categories-panel:hover .panel-menu-ctgrs {
+    display: block;
+}
+
+.menu-ctgrs-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 48px 36px 48px;
+}
+
+.menu-ctgrs-container h4 {
+    color: #111111;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 12px;
+    padding-top: 36px;
+}
+
+.menu-ctgrs-container div p {
+    margin: 0;
+    padding: 0;
+}
+
+.menu-ctgrs-container div a {
+    display: inline-block;
+    text-decoration: none;
+    padding-bottom: 8px;
+}
+
+.menu-ctgrs-container div a span {
+    color: #707072;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.menu-ctgrs-container div a span:hover {
+    color: #111111;
+    border-bottom: none;
+}
+
+.menu-ctgrs-container div {
+    margin-right: 75px;
+}
+
+/* Inizio della sezione gestione account */
+
+#sezione-gestione-account {
+    display: flex;
+    flex-direction: column;
+    margin-top: 96px;
+    margin-bottom: 46px;
+}
+
+#sezione-gestione-account h3 {
+    font-size: 23px;
+    font-weight: 500;
+    padding: 50px 50px 0 100px;
+    margin: 90px 0 24px 0;
+}
+
+#no_pref {
+    font-size: 15px;
+    margin: 48px 24px 24px 24px;
+    padding: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#container_impostazioni {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 100px;
+    top: 330px;
+    width: 280px;
+    height: auto;
+}
+
+.impostazioni {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.impostazioni a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.impostazioni img {
+    height: 20px;
+    width: auto;
+    margin-right: 16px;
+}
+
+#container_forms {
+    display: flex;
+    flex-direction: column;
+
+    margin: 70px 0 35px 550px;
+    width: 450px;
+}
+
+#container_forms h3 {
+    padding: 0 0 0 0;
+    margin: 0 0 20px 0;
+}
+
+.informazioni_utente {
+    margin-bottom: 24px;
+    width: auto;
+}
+
+.informazioni_utente label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    padding-left: 5px;
+}
+
+.informazioni_utente input,
+.informazioni_utente select {
+    width: 108%;
+    padding: 14px 16px;
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 8px;
+    outline: none;
+    background-color: white;
+}
+
+#data_n {
+    outline: none;
+}
+
+#data_err {
+    position: absolute;
+    top: 364px;
+}
+
+.informazioni_utente select {
+    width: 108%;
+    cursor: pointer;
+}
+
+#form_utente {
+    position: relative;
+}
+
+#salva_impostazioni {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 24px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    position: absolute;
+    right: -29px;
+    bottom: -25px;
+}
+
+#salva_impostazioni:hover {
+    background-color: #333;
+}
+
+#form_elimina {
+    width: 108%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 12px 0;
+    margin-top: 45px;
+}
+
+#form_elimina span {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+#elimina {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #888;
+    padding: 10px 24px;
+    border-radius: 24px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#elimina:hover {
+    background-color: #c2c2c2;
+}
+
+#top-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+input.errore {
+    border-color: rgb(179, 22, 22);
+    position: relative;
+}
+
+div.errore {
+    color: rgb(179, 22, 22);
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+#mess_err {
+    position: absolute;
+    top: 75px;
+}
+
+#password_err {
+    position: absolute;
+    top: 170px;
+}
+
+#tel_err {
+    position: absolute;
+    top: 267px;
+}
+
+/* Inizio del footer */
+
+footer {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+#top-footer-divider {
+    border-bottom: 1px solid #E5E5E5;
+    margin-bottom: 60px;
+}
+
+/* Introduco top-footer-menu per dividere il menu dalla località in modo più preciso */
+
+#top-footer-menu {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-top-footer {
+    margin: 0 0 33px 0;
+}
+
+.title-top-footer a {
+    text-decoration: none;
+    color: #111111;
+}
+
+.title-top-footer span {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.mobile-v {
+    display: none;
+    color: #111111;
+}
+
+.text-top-footer {
+    line-height: 32px;
+    margin: 0;
+    /* Poiché sto usando p che ha dei margini pre-impostati, così li rimuovo*/
+}
+
+.text-top-footer a {
+    text-decoration: none;
+    color: #707072
+}
+
+.text-top-footer a span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#Assistenza-top-footer {
+    margin-left: 60px;
+}
+
+#Azienda-top-footer {
+    margin-right: 60px;
+}
+
+#top-footer-località {
+    display: flex;
+    align-items: center;
+    height: 19px;
+    /* Ho messo flex, perché con
+    block l'immagine e il testo non erano allineati,
+    mettendo flex esso si dispone al centro e quindi uso height per sistemare
+    questo problema*/
+    cursor: pointer;
+}
+
+#top-footer-località img {
+    height: 16px;
+    width: 16px;
+}
+
+#top-footer-località span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #757575;
+}
+
+/* Inizio bottom-footer */
+
+#bottom-footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    margin-top: 72px;
+    padding-bottom: 48px;
+
+    color: rgb(112, 112, 114);
+    font-size: 14px;
+    font-weight: 575;
+}
+
+#bottom-footer a {
+    margin-right: 24px;
+    color: rgb(112, 112, 114);
+    text-decoration: none;
+}
+
+#license {
+    font-style: italic;
+    margin-right: 24px;
+}
+
+#bottom-footer a:hover {
+    color: black;
+}
+
+#Guide-panel {
+    display: flex;
+    align-items: center;
+    margin-right: 24px;
+    position: relative;
+}
+
+#Guide-panel img {
+    width: 20px;
+    height: 20px;
+}
+
+#panel-btmftr {
+    display: none;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #E5E5E5;
+
+    position: absolute;
+    bottom: 0;
+    left: -12px;
+
+    width: 200px;
+    padding: 8px 0;
+}
+
+#panel-btmftr a {
+    display: block;
+    margin-right: 0;
+    padding: 8px 16px;
+}
+
+#panel-btmftr a:hover {
+    background-color: #E5E5E5
+}
+
+#Guide-panel:hover #panel-btmftr {
+    display: block;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+#top-nav.hidden,
+#bottom-nav.hidden,
+#menu-search-bar.hidden {
+    display: none;
+}
+
+.modale {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 10;
+}
+
+#menu-search-bar {
+    background-color: white;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#upper-menu-search-bar {
+    height: 20%;
+    padding: 6px 48px 0 48px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+#nike-logo-newbar {
+    width: 85.12px;
+    height: 29.26px;
+}
+
+#new-search-bar {
+    width: 60%;
+    height: 36px;
+    background-color: #F5F5F5;
+    border-radius: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#new-search-bar img {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+#text-search-upperbar {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+
+    padding: 0 0 0 12px;
+    margin: 0;
+
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+
+    width: 100%;
+}
+
+#exit-search-button {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#exit-search-button:hover {
+    color: #707072;
+}
+
+#bottom-menu-search-bar {
+    padding: 36px 21.5% 60px 24%;
+    display: flex;
+    flex-direction: column;
+    color: #707072;
+    font-weight: 550;
+}
+
+#buttons-menu-search-bar {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px
+}
+
+#buttons-menu-search-bar .buttons {
+    background-color: #F5F5F5;
+    color: black;
+
+    font-weight: 600;
+    font-size: 16px;
+
+    height: 36px;
+
+    border-radius: 30px;
+
+    margin: 0 0px 10px 15px;
+    padding: 0 12px;
+}
+
+#buttons-menu-search-bar .buttons:hover {
+    background-color: #D1D1D1;
+}
+
+#box-fotos {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.img-box-fotos {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: white;
+    padding: 20px;
+    margin-right: 20px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    width: 150px;
+    height: auto;
+
+    position: relative;
+}
+
+.img-box-fotos img {
+    width: 110px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.img-box-fotos h4 {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.img-box-fotos span {
+    font-size: 13px;
+    color: #888;
+}
+
+#search-not-found {
+    color: #111;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.img-box-fotos .like {
+    width: auto;
+    height: 25px;
+    position: absolute;
+    right: 7px;
+    top: 5px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+#errore_aggiunta_login {
+    border: 1px solid #f8b4b4;
+    border-radius: 8px;
+    background-color: #fde8e8;
+    color: #9b1c1c;
+    font-size: 14px;
+    font-weight: 600;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 460px;
+    padding: 12px 24px;
+}
+
+#modale-elm.modale {
+    /*Mi serve perché sennò non posso centrare il pannello di eliminazione*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pannello-conferma-elm {
+    background-color: white;
+    padding: 40px 32px;
+    border: 1px solid #d1d1d1;
+    border-radius: 16px;
+    text-align: center;
+    width: 360px;
+}
+
+#pannello-conferma-elm h3 {
+    margin-top: 0;
+    margin-bottom: 35px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#container-bottoni {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 10px;
+}
+
+#annulla-elm {
+    background-color: white;
+    color: black;
+    border: 1px solid #888;
+    padding: 10px 24px;
+    border-radius: 24px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#annulla-elm:hover {
+    background-color: #f5f5f5;
+}
+
+#conferma-elm {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 24px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#conferma-elm:hover {
+    background-color: #333;
+}
+
+
+/*Media query*/
+
+@media (max-width: 768px) {
+
+    #top-nav {
+        display: none;
+    }
+
+    #bottom-nav {
+        top: 0;
+        left: 0;
+        right: 0;
+        width: auto;
+        padding: 0 24px;
+    }
+
+    #bottom-nav-imgs {
+        margin-left: 0;
+    }
+
+    .categories {
+        display: none;
+    }
+
+    #search-bar,
+    #favourite-products {
+        display: none;
+    }
+
+    #mobile-menu-btmnav {
+        display: inline-block;
+        margin: 0 0 0 16px;
+    }
+
+    #shopping-bag-products {
+        margin: 0 0 0 16px;
+    }
+
+    #shopping-bag-products img {
+        width: 22px;
+        height: 22px;
+    }
+
+    #shopping-bag-products:hover #shopping-bag-overlay {
+        bottom: -1px;
+    }
+
+    #mobile-user-icon {
+        display: inline-block;
+        margin: 0 0 0 16px;
+    }
+
+    #mobile-search-bar {
+        display: inline-block;
+        margin: 0;
+    }
+
+    footer {
+        padding: 0 0 0 12px;
+    }
+
+    #top-footer,
+    #top-footer-menu {
+        flex-direction: column;
+    }
+
+    #top-footer-menu {
+        width: 99%;
+    }
+
+    .text-top-footer {
+        display: none;
+    }
+
+    .title-top-footer {
+        display: none;
+    }
+
+    #top-footer-divider {
+        margin-bottom: 30px;
+    }
+
+    .mobile-v {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #E5E5E5;
+        margin: 20px 0 0 0px;
+        padding-bottom: 20px;
+    }
+
+    .mobile-v img {
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+    }
+
+    #Assistenza-top-footer {
+        margin-left: 0;
+    }
+
+    #Azienda-top-footer {
+        margin-right: 0px;
+    }
+
+    #top-footer-località {
+        border-bottom: 1px solid #E5E5E5;
+        margin: 20px 0 0 0px;
+        padding-bottom: 20px;
+    }
+
+    #bottom-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+
+    #bottom-footer span,
+    #bottom-footer #Guide-panel {
+        margin-bottom: 16px;
+    }
+
+    #Guide-panel span {
+        margin: 0px;
+        /* Metto questo perché
+        con il selettore di prima ho preso anche lo
+        span dentro Guide-panel, quindi è come se stessi
+        aggiungendo un margin solo a "Guide " */
+    }
+
+    #bottom-footer a {
+        margin-bottom: 16px;
+    }
+
+    #menu-search-bar {
+        background-color: white;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    #nike-logo-newbar {
+        display: none;
+    }
+
+    #upper-menu-search-bar {
+        height: auto;
+        padding: 15px 4% 0 4%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #bottom-menu-search-bar {
+        padding: 20px 4% 60px 4%;
+        display: flex;
+        flex-direction: column;
+        color: #707072;
+        font-weight: 550;
+    }
+
+    #new-search-bar {
+        width: 70%;
+    }
+
+    #box-fotos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .img-box-fotos {
+        width: 40%;
+        margin-right: 0;
+        margin-bottom: 15px;
+        padding: 10px 5px;
+    }
+
+    .img-box-fotos img {
+        width: 75px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .img-box-fotos h4 {
+        font-size: 13px;
+        margin: 5px 0;
+        line-height: 1.2;
+    }
+
+    .img-box-fotos span {
+        font-size: 11px;
+    }
+
+    #errore_aggiunta_login {
+        width: 80%;
+
+        font-size: 12px;
+        padding: 10px 15px;
+        line-height: 1.4;
+    }
+
+    /* Qui aggiungo la parte relativa alla gestione dell'account */
+
+    #sezione-gestione-account {
+        margin-top: 60px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #sezione-gestione-account h3 {
+        padding: 30px 24px 0 24px;
+        margin: 0 0 16px 0;
+        font-size: 26px;
+        font-weight: 600;
+    }
+
+    #container_impostazioni {
+        position: static;
+        width: auto;
+        margin: 0 24px 30px 24px;
+    }
+
+    .impostazioni {
+        border-bottom: 1px solid #e5e5e5;
+        padding: 16px 0;
+        margin-bottom: 0;
+        justify-content: space-between;
+    }
+
+    .impostazioni a {
+        font-size: 16px;
+        color: #111111;
+    }
+
+    #container_forms {
+        margin: 20px 24px 40px 24px;
+        width: auto;
+    }
+
+    #container_forms h3 {
+        font-size: 20px;
+        padding: 0;
+        margin-bottom: 24px;
+    }
+
+    .informazioni_utente input {
+        width: 100%;
+    }
+
+    .informazioni_utente select {
+        width: 100%;
+    }
+
+    #salva_impostazioni {
+        position: static;
+        display: block;
+        width: 100%;
+        padding: 14px 0;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    #form_elimina {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 40px;
+    }
+
+    #form_elimina span {
+        margin-bottom: 15px;
+    }
+
+    #elimina {
+        width: 100%;
+        padding: 12px 0;
+        text-align: center;
+    }
+
+    #pannello-lat {
+        position: absolute;
+        width: 50%;
+        height: 100vh;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        padding: 60px 20px;
+    }
+
+    .link-pannello {
+        font-size: 18px;
+        font-weight: 600;
+        color: #111;
+        text-decoration: none;
+        margin-bottom: 20px;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    #chiudi-menu-btn {
+        cursor: pointer;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+
+    #chiudi-menu-btn:hover {
+        text-decoration: underline;
+    }
+
+    #bottone-accesso {
+        width: auto;
+        background-color: #111111;
+        border-radius: 30px;
+        margin-top: 100px;
+        cursor: pointer;
+    }
+
+    #bottone-accesso a {
+        display: block;
+        padding: 14px 24px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    #bottone-accesso:hover {
+        background-color: #333;
+    }
+
+    #bottone-logout {
+        width: auto;
+        background-color: #111111;
+        border-radius: 30px;
+        margin-top: 100px;
+        cursor: pointer;
+    }
+
+    #bottone-logout a {
+        display: block;
+        padding: 14px 24px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    #bottone-logout:hover {
+        background-color: #333;
+    }
+
+    #pannello-lat.hidden {
+        display: none;
+    }
+
+}

@@ -1,0 +1,1220 @@
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+/* Parte superiore della barra di navigazione */
+
+#top-nav {
+    background-color: #F5F5F5;
+    height: 36px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+}
+
+#top-nav-imgs {
+    padding-left: 56px;
+    padding-top: 5px
+}
+
+#jrdn-logo {
+    width: 16.85px;
+    height: 16px;
+    padding-right: 24px;
+}
+
+#cnvrs-logo {
+    width: 33px;
+    height: 15px;
+}
+
+#menu {
+    font-size: 12px;
+    color: #111111;
+    font-weight: 600;
+    padding-right: 48px;
+    text-decoration: none;
+}
+
+#menu a {
+    color: #111111;
+    text-decoration: none;
+}
+
+#menu a:hover {
+    color: #707072;
+}
+
+.divider {
+    padding: 0px 8px;
+}
+
+#help-container {
+    display: inline-block;
+    position: relative;
+    padding: 10px 0px;
+}
+
+#help-panel {
+    display: none;
+    position: absolute;
+    z-index: 10;
+}
+
+#help-container:hover #help-panel {
+    display: block;
+    width: 214px;
+    height: 306px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 12px 16px 12px 12px;
+    top: 35px;
+    left: -184.188px;
+}
+
+#help-menu-panel {
+    width: 134px;
+    height: 306px;
+    margin-left: 12px;
+}
+
+#help-menu-panel-title {
+    display: inline-block;
+    padding-bottom: 12px;
+}
+
+#help-menu-panel-title a {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+#help-menu-panel-title a:hover {
+    color: rgb(17, 17, 17);
+}
+
+.help-menu-panel-section {
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+#help-menu-panel .help-menu-panel-section a {
+    color: rgb(112, 112, 114);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+#help-menu-panel .help-menu-panel-section a:hover {
+    color: #111111;
+}
+
+#login-container {
+    display: inline-block;
+    position: relative;
+    padding: 10px 0px;
+}
+
+#login-panel {
+    display: none;
+    position: absolute;
+    z-index: 10;
+}
+
+#login-container:hover #login-panel {
+    display: block;
+    width: 214px;
+    height: auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 12px 16px 12px 12px;
+    top: 38px;
+    right: 13px;
+}
+
+#login-menu-panel {
+    width: 134px;
+    height: auto;
+    margin-left: 12px;
+}
+
+#login-menu-panel-title {
+    display: inline-block;
+    padding-bottom: 12px;
+}
+
+#login-menu-panel-title a {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+#login-menu-panel-title a:hover {
+    color: rgb(17, 17, 17);
+}
+
+.login-menu-panel-section {
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+#login-menu-panel .login-menu-panel-section a {
+    color: rgb(112, 112, 114);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+#login-menu-panel .login-menu-panel-section a:hover {
+    color: #111111;
+}
+
+#login-container img {
+    width: 15px;
+    height: 15px;
+
+    margin-left: 5px;
+}
+
+
+/* Parte inferiore della barra di navigazione */
+
+#bottom-nav {
+    height: 60px;
+    width: 100%;
+    background-color: white;
+
+    position: fixed;
+    top: 36px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9;
+}
+
+#nike-logo {
+    width: 65.85px;
+    height: 22.54px;
+}
+
+#bottom-nav-imgs {
+    margin-left: 48px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+
+#search-bar {
+    width: 168px;
+    height: 36px;
+    background-color: #F5F5F5;
+    border-radius: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: text;
+}
+
+#search-bar img {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+#search-bar span {
+    margin-left: 10px;
+    color: #757575;
+    font-weight: 500;
+}
+
+#favourite-products {
+    display: inline-block;
+    margin-left: 20px;
+    position: relative;
+}
+
+#favourite-products img {
+    width: 22px;
+    height: 22px;
+}
+
+#shopping-bag-products {
+    display: inline-block;
+    margin-right: 64px;
+    margin-left: 20px;
+    position: relative;
+}
+
+#shopping-bag-products img {
+    width: 20px;
+    height: 20px;
+}
+
+.overlay {
+    display: none;
+    background-color: rgba(211, 203, 203, 0.459);
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+}
+
+#favourite-products:hover #favourite-products-overlay {
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+    right: -4px;
+    top: -5px;
+}
+
+#shopping-bag-products:hover #shopping-bag-overlay {
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+    right: -4px;
+    bottom: -2px;
+}
+
+#mobile-menu-btmnav {
+    display: none;
+    position: relative;
+}
+
+#mobile-menu-btmnav .linea {
+    width: 18px;
+    height: 2px;
+    background-color: #111111;
+    margin: 5px 0;
+    border-radius: 2px;
+}
+
+#mobile-menu-btmnav:hover #mobile-menu-overlay {
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+    right: -6px;
+    bottom: -2px;
+}
+
+#mobile-user-icon {
+    display: none;
+    position: relative;
+}
+
+#mobile-user-icon img {
+    height: 20px;
+    width: 20px;
+}
+
+#mobile-user-icon:hover #user-icon-overlay {
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+    right: -5px;
+    bottom: -2px;
+}
+
+#mobile-search-bar {
+    display: none;
+    position: relative;
+}
+
+#mobile-search-bar img {
+    width: 20px;
+    height: 20px;
+}
+
+#mobile-search-bar:hover #mobile-search-overlay {
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+    right: -5px;
+    bottom: -1px;
+}
+
+.categories {
+    margin-left: 190px;
+    display: flex;
+}
+
+.categories a span {
+    margin: 0 9px;
+}
+
+.categories a {
+    text-decoration: none;
+    color: #111111;
+    font-weight: bold;
+}
+
+.categories-panel {
+    padding: 10px 0;
+    /* Serve per non aumentare l'area del block per l'hover */
+}
+
+.categories-panel a span:hover {
+    padding-bottom: 4px;
+    border-bottom: 2px solid black;
+}
+
+.panel-menu-ctgrs {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: white;
+    width: 100%;
+}
+
+.categories-panel:hover .panel-menu-ctgrs {
+    display: block;
+}
+
+.menu-ctgrs-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 48px 36px 48px;
+}
+
+.menu-ctgrs-container h4 {
+    color: #111111;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 12px;
+    padding-top: 36px;
+}
+
+.menu-ctgrs-container div p {
+    margin: 0;
+    padding: 0;
+}
+
+.menu-ctgrs-container div a {
+    display: inline-block;
+    text-decoration: none;
+    padding-bottom: 8px;
+}
+
+.menu-ctgrs-container div a span {
+    color: #707072;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.menu-ctgrs-container div a span:hover {
+    color: #111111;
+    border-bottom: none;
+}
+
+.menu-ctgrs-container div {
+    margin-right: 75px;
+}
+
+/* Inizio della sezione preferiti */
+
+#sezione-preferiti {
+    display: flex;
+    flex-direction: column;
+    margin-top: 96px;
+    margin-bottom: 46px;
+}
+
+#sezione-preferiti h3 {
+    font-size: 23px;
+    font-weight: 500;
+    padding: 48px 48px 0 48px;
+    margin: 0;
+    text-align: left;
+}
+
+#no_pref {
+    font-size: 15px;
+    margin: 48px 24px 24px 24px;
+    padding: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Inizio del footer */
+
+footer {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+#top-footer-divider {
+    border-bottom: 1px solid #E5E5E5;
+    margin-bottom: 60px;
+}
+
+#top-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Introduco top-footer-menu per dividere il menu dalla località in modo più preciso */
+
+#top-footer-menu {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-top-footer {
+    margin: 0 0 33px 0;
+}
+
+.title-top-footer a {
+    text-decoration: none;
+    color: #111111;
+}
+
+.title-top-footer span {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.mobile-v {
+    display: none;
+    color: #111111;
+}
+
+.text-top-footer {
+    line-height: 32px;
+    margin: 0;
+    /* Poiché sto usando p che ha dei margini pre-impostati, così li rimuovo*/
+}
+
+.text-top-footer a {
+    text-decoration: none;
+    color: #707072
+}
+
+.text-top-footer a span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#Assistenza-top-footer {
+    margin-left: 60px;
+}
+
+#Azienda-top-footer {
+    margin-right: 60px;
+}
+
+#top-footer-località {
+    display: flex;
+    align-items: center;
+    height: 19px;
+    /* Ho messo flex, perché con
+    block l'immagine e il testo non erano allineati,
+    mettendo flex esso si dispone al centro e quindi uso height per sistemare
+    questo problema*/
+    cursor: pointer;
+}
+
+#top-footer-località img {
+    height: 16px;
+    width: 16px;
+}
+
+#top-footer-località span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #757575;
+}
+
+/* Inizio bottom-footer */
+
+#bottom-footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    margin-top: 72px;
+    padding-bottom: 48px;
+
+    color: rgb(112, 112, 114);
+    font-size: 14px;
+    font-weight: 575;
+}
+
+#bottom-footer a {
+    margin-right: 24px;
+    color: rgb(112, 112, 114);
+    text-decoration: none;
+}
+
+#license {
+    font-style: italic;
+    margin-right: 24px;
+}
+
+#bottom-footer a:hover {
+    color: black;
+}
+
+#Guide-panel {
+    display: flex;
+    align-items: center;
+    margin-right: 24px;
+    position: relative;
+}
+
+#Guide-panel img {
+    width: 20px;
+    height: 20px;
+}
+
+#panel-btmftr {
+    display: none;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #E5E5E5;
+
+    position: absolute;
+    bottom: 0;
+    left: -12px;
+
+    width: 200px;
+    padding: 8px 0;
+}
+
+#panel-btmftr a {
+    display: block;
+    margin-right: 0;
+    padding: 8px 16px;
+}
+
+#panel-btmftr a:hover {
+    background-color: #E5E5E5
+}
+
+#Guide-panel:hover #panel-btmftr {
+    display: block;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+#top-nav.hidden,
+#bottom-nav.hidden,
+#menu-search-bar.hidden {
+    display: none;
+}
+
+.modale {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 10;
+}
+
+#menu-search-bar {
+    background-color: white;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#upper-menu-search-bar {
+    height: 20%;
+    padding: 6px 48px 0 48px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+#nike-logo-newbar {
+    width: 85.12px;
+    height: 29.26px;
+}
+
+#new-search-bar {
+    width: 60%;
+    height: 36px;
+    background-color: #F5F5F5;
+    border-radius: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#new-search-bar img {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+#text-search-upperbar {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+
+    padding: 0 0 0 12px;
+    margin: 0;
+
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+
+    width: 100%;
+}
+
+#exit-search-button {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#exit-search-button:hover {
+    color: #707072;
+}
+
+#bottom-menu-search-bar {
+    padding: 36px 21.5% 60px 24%;
+    display: flex;
+    flex-direction: column;
+    color: #707072;
+    font-weight: 550;
+}
+
+#buttons-menu-search-bar {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px
+}
+
+#buttons-menu-search-bar .buttons {
+    background-color: #F5F5F5;
+    color: black;
+
+    font-weight: 600;
+    font-size: 16px;
+
+    height: 36px;
+
+    border-radius: 30px;
+
+    margin: 0 0px 10px 15px;
+    padding: 0 12px;
+}
+
+#buttons-menu-search-bar .buttons:hover {
+    background-color: #D1D1D1;
+}
+
+#box-fotos {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.img-box-fotos {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: white;
+    padding: 20px;
+    margin-right: 20px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    width: 150px;
+    height: auto;
+
+    position: relative;
+}
+
+.img-box-fotos img {
+    width: 110px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.img-box-fotos h4 {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.img-box-fotos span {
+    font-size: 13px;
+    color: #888;
+}
+
+#search-not-found {
+    color: #111;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.img-box-fotos .like {
+    width: auto;
+    height: 25px;
+    position: absolute;
+    right: 7px;
+    top: 5px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+
+#box-fotos-pref {
+    display: flex;
+    justify-content: flex-start;
+    width: auto;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    padding-left: 40px;
+}
+
+.img-box-fotos-pref {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
+    padding: 20px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+    width: 20%;
+    height: 600px;
+
+    border: 1px solid gray;
+
+    position: relative;
+}
+
+.img-box-fotos-pref img {
+    width: calc(100% - 35%);
+    height: auto;
+    margin: 0 auto 15px auto;
+}
+
+.img-box-fotos-pref h4 {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.img-box-fotos-pref span {
+    font-size: 13px;
+    color: #888;
+}
+
+.img-box-fotos-pref .like {
+    width: auto;
+    height: 35px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.btn-carrello {
+    height: 36px;
+    width: auto;
+    padding: 13px 12px 0 12px;
+    margin: auto 0 0 0;
+
+    background-color: white;
+    font-size: 16px;
+    font-weight: 500;
+
+    border: 1px solid black;
+    border-radius: 30px;
+    color: black;
+    cursor: pointer;
+}
+
+.btn-carrello:hover {
+    background-color: rgb(201, 199, 195);
+}
+
+#errore_aggiunta_login {
+    border: 1px solid #f8b4b4;
+    border-radius: 8px;
+    background-color: #fde8e8;
+    color: #9b1c1c;
+    font-size: 14px;
+    font-weight: 600;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 460px;
+    padding: 12px 24px;
+}
+
+.overlay_rimozione {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(207, 207, 207, 0.493);
+    width: 100%;
+    height: 100%;
+
+    z-index: 5;
+}
+
+
+
+/*Inizio media query*/
+@media (max-width: 768px) {
+
+    #top-nav {
+        display: none;
+    }
+
+    #bottom-nav {
+        top: 0;
+        left: 0;
+        right: 0;
+        width: auto;
+        padding: 0 24px;
+    }
+
+    #bottom-nav-imgs {
+        margin-left: 0;
+    }
+
+    .categories {
+        display: none;
+    }
+
+    #search-bar,
+    #favourite-products {
+        display: none;
+    }
+
+    #mobile-menu-btmnav {
+        display: inline-block;
+        margin: 0 0 0 16px;
+    }
+
+    #shopping-bag-products {
+        margin: 0 0 0 16px;
+    }
+
+    #shopping-bag-products img {
+        width: 22px;
+        height: 22px;
+    }
+
+    #shopping-bag-products:hover #shopping-bag-overlay {
+        bottom: -1px;
+    }
+
+    #mobile-user-icon {
+        display: inline-block;
+        margin: 0 0 0 16px;
+    }
+
+    #mobile-search-bar {
+        display: inline-block;
+        margin: 0;
+    }
+
+    footer {
+        padding: 0 0 0 12px;
+    }
+
+    #top-footer,
+    #top-footer-menu {
+        flex-direction: column;
+    }
+
+    #top-footer-menu {
+        width: 99%;
+    }
+
+    .text-top-footer {
+        display: none;
+    }
+
+    .title-top-footer {
+        display: none;
+    }
+
+    #top-footer-divider {
+        margin-bottom: 30px;
+    }
+
+    .mobile-v {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #E5E5E5;
+        margin: 20px 0 0 0px;
+        padding-bottom: 20px;
+    }
+
+    .mobile-v img {
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+    }
+
+    #Assistenza-top-footer {
+        margin-left: 0;
+    }
+
+    #Azienda-top-footer {
+        margin-right: 0px;
+    }
+
+    #top-footer-località {
+        border-bottom: 1px solid #E5E5E5;
+        margin: 20px 0 0 0px;
+        padding-bottom: 20px;
+    }
+
+    #bottom-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+
+    #bottom-footer span,
+    #bottom-footer #Guide-panel {
+        margin-bottom: 16px;
+    }
+
+    #Guide-panel span {
+        margin: 0px;
+        /* Metto questo perché
+        con il selettore di prima ho preso anche lo
+        span dentro Guide-panel, quindi è come se stessi
+        aggiungendo un margin solo a "Guide " */
+    }
+
+    #bottom-footer a {
+        margin-bottom: 16px;
+    }
+
+    #menu-search-bar {
+        background-color: white;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    #nike-logo-newbar {
+        display: none;
+    }
+
+    #upper-menu-search-bar {
+        height: auto;
+        padding: 15px 4% 0 4%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #bottom-menu-search-bar {
+        padding: 20px 4% 60px 4%;
+        display: flex;
+        flex-direction: column;
+        color: #707072;
+        font-weight: 550;
+    }
+
+    #new-search-bar {
+        width: 70%;
+    }
+
+    #box-fotos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .img-box-fotos {
+        width: 40%;
+        margin-right: 0;
+        margin-bottom: 15px;
+        padding: 10px 5px;
+    }
+
+    .img-box-fotos img {
+        width: 75px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .img-box-fotos h4 {
+        font-size: 13px;
+        margin: 5px 0;
+        line-height: 1.2;
+    }
+
+    .img-box-fotos span {
+        font-size: 11px;
+    }
+
+    #errore_aggiunta_login {
+        width: 80%;
+
+        font-size: 12px;
+        padding: 10px 15px;
+        line-height: 1.4;
+    }
+
+    #sezione-preferiti {
+        margin-top: 60px;
+        margin-bottom: 20px;
+    }
+
+    #sezione-preferiti h3 {
+        padding: 24px 24px 0 24px;
+        font-size: 20px;
+    }
+
+    #no_pref {
+        margin: 24px;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    #box-fotos-pref {
+        padding-left: 0;
+        margin-top: 20px;
+        justify-content: space-around;
+    }
+
+    .img-box-fotos-pref {
+        width: 40%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 20px;
+        padding: 15px 10px;
+        border-radius: 8px;
+    }
+
+    .img-box-fotos-pref img {
+        width: 90%;
+        margin: 0 auto 10px auto;
+    }
+
+    .img-box-fotos-pref h4 {
+        font-size: 13px;
+        margin: 5px 0;
+    }
+
+    .img-box-fotos-pref span {
+        font-size: 12px;
+    }
+
+    .img-box-fotos-pref .like {
+        height: 22px;
+        top: 8px;
+        right: 8px;
+    }
+
+    .btn-carrello {
+        height: auto;
+        font-size: 13px;
+        padding: 5px 5px;
+        margin-top: auto;
+    }
+
+    #pannello-lat {
+        position: absolute;
+        width: 50%;
+        height: 100vh;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        padding: 60px 20px;
+    }
+
+    .link-pannello {
+        font-size: 18px;
+        font-weight: 600;
+        color: #111;
+        text-decoration: none;
+        margin-bottom: 20px;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    #chiudi-menu-btn {
+        cursor: pointer;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+
+    #chiudi-menu-btn:hover {
+        text-decoration: underline;
+    }
+
+    #bottone-accesso,
+    #bottone-logout {
+        width: auto;
+        background-color: #111111;
+        border-radius: 30px;
+        margin-top: 100px;
+        cursor: pointer;
+    }
+
+    #bottone-accesso a,
+    #bottone-logout a {
+        display: block;
+        padding: 14px 24px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    #bottone-accesso:hover,
+    #bottone-logout:hover {
+        background-color: #333;
+    }
+
+    #pannello-lat.hidden {
+        display: none;
+    }
+
+}
