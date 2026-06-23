@@ -4,6 +4,12 @@ form.addEventListener("submit", checkForm);
 function checkForm(event) {
     if (form.email.value.length === 0 || !form.email.value.includes("@")) {
 
+        const erroreServer = document.querySelector("#errore_php");
+
+        if (erroreServer) {
+            erroreServer.remove();
+        }
+
         if (!document.querySelector("#mess_err")) {
             const email = document.querySelector("#form_email");
             email.classList.add("errore");

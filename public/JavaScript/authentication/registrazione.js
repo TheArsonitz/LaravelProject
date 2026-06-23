@@ -7,7 +7,7 @@ function apriPreferenze(event) {
 
     if (tendinaEsistente) {
 
-        if(tendinaEsistente.classList.contains("hidden"))
+        if (tendinaEsistente.classList.contains("hidden"))
             tendinaEsistente.classList.remove("hidden");
         else
             tendinaEsistente.classList.add("hidden");
@@ -89,7 +89,7 @@ function checkForm(event) {
 function checkNome(event) {
     if (form.nome.value.length === 0) {
 
-        const erroreNome = document.querySelector("#errore_form");
+        const erroreNome = document.querySelector("#errore_php");
 
         //Cancello l'eventuale errore generato dal php
         if (erroreNome) {
@@ -116,7 +116,7 @@ function checkNome(event) {
 function checkCognome(event) {
     if (form.cognome.value.length === 0) {
 
-        const erroreNome = document.querySelector("#errore_form");
+        const erroreNome = document.querySelector("#errore_php");
 
         //Cancello l'eventuale errore generato dal php
         if (erroreNome) {
@@ -143,7 +143,7 @@ function checkCognome(event) {
 function checkPassword(event) {
     if (form.password.value.length < 8) {
 
-        const erroreNome = document.querySelector("#errore_form");
+        const erroreNome = document.querySelector("#errore_php");
 
         //Cancello l'eventuale errore generato dal php
         if (erroreNome) {
@@ -176,7 +176,7 @@ function checkPreferenza(event) {
 
     if (!inputPreferenza || inputPreferenza.value.length === 0) {
 
-        const erroreNome = document.querySelector("#errore_form");
+        const erroreNome = document.querySelector("#errore_php");
 
         //Cancello l'eventuale errore generato dal php
         if (erroreNome) {
@@ -203,7 +203,7 @@ function checkPreferenza(event) {
 
 function checkData(event) {
 
-    const erroreNome = document.querySelector("#errore_form");
+    const erroreNome = document.querySelector("#errore_php");
 
     //Cancello l'eventuale errore generato dal php
     if (erroreNome) {

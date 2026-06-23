@@ -50,10 +50,9 @@ class LoginController extends Controller
 
         $errori = [];
 
-        if (! isset($request->password) || strlen($request->password) === 0) {
-            $errori['password'] = 'La password è obbligatoria';
-        } elseif (strlen($request->password) < 8) {
-            $errori['password'] = 'La password deve contenere almeno 8 caratteri';
+        if (! isset($request->password) || strlen($request->password) === 0 ||
+            strlen($request->password) < 8) {
+            $errori['password'] = 'Richiesta invalida';
         }
 
         if (count($errori) > 0) {
@@ -74,8 +73,10 @@ class LoginController extends Controller
 
             return redirect('home');
         } else {
+            $errori['password'] = 'Password errata';
+
             return redirect('authentication/login_password')
-                ->withErrors(['password' => 'Password errata']);
+                ->withErrors($errori);
         }
 
     }

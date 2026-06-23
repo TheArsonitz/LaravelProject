@@ -128,7 +128,7 @@ h1 {
     background-color: #e9e9e9;
     display: flex;
     align-items: center;
-    padding: 10px 16px 10px 16px;
+    padding: 10px 16px 10px 5px;
     margin-bottom: 15px;
 }
 
@@ -181,11 +181,11 @@ h1 {
     }
 
     #condizioni_uso {
-        margin-top: 35px;
+        margin-top: 30px;
     }
 
-    #pass_sbagl {
-        width: 90%;
+    #errore_php {
+        width: 87%;
         margin: 0 0 15px 0;
     }
 

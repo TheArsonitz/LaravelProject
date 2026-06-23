@@ -31,12 +31,12 @@
 @section('form')
 
     @if ($errors->any())
-        <div id = "errore_php">
-            @foreach ($errors->all() as $errore)
+        @foreach ($errors->all() as $errore)
+            <div id = "errore_php">
                 <img src="{{ url('Images/exclamation.png') }}">
                 <span> {{ $errore }} </span>
-            @endforeach
-        </div>
+            </div>
+        @endforeach
     @endif
 
     <form id="form" name='login_form' action='{{ url('authentication/check_email') }}' method='post'>
