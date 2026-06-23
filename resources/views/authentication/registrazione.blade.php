@@ -33,8 +33,9 @@
 @section('form')
 
     @if ($errors->any())
-        <div class="errore">
-            <span> Qualcosa è andato storto, riprova. </span>
+        <div id="errore_php">
+            <img src="{{ url('Images/exclamation.png') }}">
+            <span>Qualcosa è andato storto, riprova.</span>
         </div>
     @endif
 

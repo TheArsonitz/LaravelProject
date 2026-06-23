@@ -31,8 +31,9 @@
 @section('form')
 
     @if ($errors->any())
-        <div class = 'errore'>
+        <div id = "errore_php">
             @foreach ($errors->all() as $errore)
+                <img src="{{ url('Images/exclamation.png') }}">
                 <span> {{ $errore }} </span>
             @endforeach
         </div>

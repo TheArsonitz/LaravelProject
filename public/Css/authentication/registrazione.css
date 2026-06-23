@@ -271,12 +271,21 @@ h1 {
     margin-bottom: 15px;
 }
 
-#pass_sbagl img {
+#errore_php {
+    width: auto;
+    background-color: #e9e9e9;
+    display: flex;
+    align-items: center;
+    padding: 10px 16px 10px 16px;
+    margin-bottom: 15px;
+}
+
+#errore_php img {
     width: 30px;
     height: 30px;
 }
 
-#pass_sbagl span {
+#errore_php span {
     font-size: medium;
 }
 
@@ -366,6 +375,11 @@ h1 {
         position: absolute;
         top: 367px;
         left: 12px;
+    }
+
+    #pass_sbagl {
+        width: 90%;
+        margin: 0 0 15px 0;
     }
 
 }
