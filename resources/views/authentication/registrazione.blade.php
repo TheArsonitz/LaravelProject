@@ -32,10 +32,9 @@
 
 @section('form')
 
-    @if (request('errore') === 'erroreForm')
-        <div id="errore_form">
-            <img src="{{ url('Images/exclamation.png') }}">
-            <span>Qualcosa è andato storto... </span>
+    @if ($errors->any())
+        <div class="errore">
+            <span> Qualcosa è andato storto, riprova. </span>
         </div>
     @endif
 
@@ -45,9 +44,11 @@
 
         <div id="container_nomcogn">
 
-            <input type="text" name="nome" placeholder="Nome*" id="form_nome" class="campo_form">
+            <input type="text" name="nome" placeholder="Nome*" id="form_nome" class="campo_form"
+                value="{{ old('nome') }}">
 
-            <input type="text" name="cognome" placeholder="Cognome*" id="form_cognome" class="campo_form">
+            <input type="text" name="cognome" placeholder="Cognome*" id="form_cognome" class="campo_form"
+                value="{{ old('cognome') }}">
 
         </div>
 
@@ -64,11 +65,14 @@
 
         <div id="container_data">
 
-            <input type="text" name="giorno" placeholder="Giorno*" id="form_giorno" class="campo_form" data-errore="0">
+            <input type="text" name="giorno" placeholder="Giorno*" id="form_giorno" class="campo_form" data-errore="0"
+                value="{{ old('giorno') }}">
 
-            <input type="text" name="mese" placeholder="Mese*" id="form_mese" class="campo_form" data-errore="0">
+            <input type="text" name="mese" placeholder="Mese*" id="form_mese" class="campo_form" data-errore="0"
+                value="{{ old('mese') }}">
 
-            <input type="text" name="anno" placeholder="Anno*" id="form_anno" class="campo_form" data-errore="0">
+            <input type="text" name="anno" placeholder="Anno*" id="form_anno" class="campo_form" data-errore="0"
+                value="{{ old('anno') }}">
 
         </div>
 

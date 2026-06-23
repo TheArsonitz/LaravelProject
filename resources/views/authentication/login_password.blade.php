@@ -30,10 +30,14 @@
 
 @section('form')
 
-    @if (request('errore') === 'password_errata')
+    @if ($errors->any())
         <div id = 'pass_sbagl'>
             <img src='{{ url('Images/exclamation.png') }}'>
-            <span>Le credenziali non sono valide </span>
+            <span>
+                @foreach ($errors->all() as $errore)
+                    <span> {{ $errore }} </span>
+                @endforeach
+            </span>
         </div>
     @endif
 

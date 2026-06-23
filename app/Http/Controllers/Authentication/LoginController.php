@@ -17,22 +17,26 @@ class LoginController extends Controller
     {
 
         $email_utente = $request->email;
+        $errori = [];
 
-        if ($email_utente !== null) {
-
-            session(['email' => $email_utente]);
-
-            $utente = User::where('email', $email_utente)->first();
-
-            if ($utente !== null) {
-                return redirect('authentication/login_password');
-            } else {
-                return redirect('authentication/registrazione');
-            }
-
+        if (! isset($email_utente) || ! filter_var($request->email, FILTER_VALIDATE_EMAIL)) {
+            $errori['email'] = 'Inserisci un indirizzo email valido';
         }
 
-        return redirect('authentication/login');
+        if (count($errori) > 0) {
+            return redirect('authentication/login')
+                ->withErrors($errori);
+        }
+
+        session(['email' => $email_utente]);
+
+        $utente = User::where('email', $email_utente)->first();
+
+        if ($utente !== null) {
+            return redirect('authentication/login_password');
+        } else {
+            return redirect('authentication/registrazione');
+        }
 
     }
 
@@ -44,25 +48,34 @@ class LoginController extends Controller
     public function checkPassword(Request $request)
     {
 
-        if ($request->password != null) {
-            $emailUtente = session('email');
+        $errori = [];
 
-            $utente = User::where('email', $emailUtente)->first();
+        if (! isset($request->password) || strlen($request->password) === 0) {
+            $errori['password'] = 'La password è obbligatoria';
+        } elseif (strlen($request->password) < 8) {
+            $errori['password'] = 'La password deve contenere almeno 8 caratteri';
+        }
 
-            $passwordUtente = $utente->password;
+        if (count($errori) > 0) {
+            return redirect('authentication/login_password')
+                ->withErrors($errori);
+        }
 
-            if (password_verify($request->password, $passwordUtente)) {
-                session(['user_id' => $utente->id,
-                    'nome' => $utente->nome,
-                    'paese' => $utente->paese]);
+        $emailUtente = session('email');
 
-                return redirect('home');
-            } else {
-                return redirect('authentication/login_password?errore=password_errata');
-            }
+        $utente = User::where('email', $emailUtente)->first();
 
+        $passwordUtente = $utente->password;
+
+        if (password_verify($request->password, $passwordUtente)) {
+            session(['user_id' => $utente->id,
+                'nome' => $utente->nome,
+                'paese' => $utente->paese]);
+
+            return redirect('home');
         } else {
-            return redirect('authentication/login_password');
+            return redirect('authentication/login_password')
+                ->withErrors(['password' => 'Password errata']);
         }
 
     }

@@ -29,6 +29,15 @@
 @endsection
 
 @section('form')
+
+    @if ($errors->any())
+        <div class = 'errore'>
+            @foreach ($errors->all() as $errore)
+                <span> {{ $errore }} </span>
+            @endforeach
+        </div>
+    @endif
+
     <form id="form" name='login_form' action='{{ url('authentication/check_email') }}' method='post'>
         @csrf
         <input type="text" name="email" placeholder="E-mail*" id="form_email">

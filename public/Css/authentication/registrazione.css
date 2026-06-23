@@ -286,14 +286,14 @@ h1 {
 @media (max-width: 768px) {
 
     article {
-        width: auto; 
-        margin: 0 24px; 
+        width: auto;
+        margin: 0 24px;
         height: auto;
     }
 
     #loghi {
         height: 60px;
-        width: 100%; 
+        width: 100%;
         margin-top: 20px;
         margin-bottom: 20px;
     }
@@ -302,63 +302,63 @@ h1 {
         align-items: stretch;
     }
 
-    #form_password, 
-    #pref_acqu, 
-    #container_nomcogn, 
+    #form_password,
+    #pref_acqu,
+    #container_nomcogn,
     #container_data {
-        width: auto;         
+        width: auto;
         margin-left: 0;
         margin-right: 0;
     }
 
-    #container_nomcogn { 
-        margin-bottom: 20px; 
+    #container_nomcogn {
+        margin-bottom: 20px;
     }
 
-    #form_password { 
-        margin-bottom: 16px; 
+    #form_password {
+        margin-bottom: 16px;
     }
 
-    #pref_acqu { 
-        margin-bottom: 20px; 
+    #pref_acqu {
+        margin-bottom: 20px;
     }
 
-    
-    #container_data { 
-        margin-bottom: 20px; 
+
+    #container_data {
+        margin-bottom: 20px;
     }
 
     #container_nomcogn .campo_form {
-        width: 40%; 
+        width: 40%;
         margin-bottom: 0;
     }
 
     #container_data .campo_form {
-        width: 23%; 
+        width: 23%;
         margin-bottom: 0;
     }
 
     #registrazione_button {
-        width: 100%;        
-        padding: 14px 0;    
+        width: 100%;
+        padding: 14px 0;
         margin-top: 24px;
     }
 
     #nome_err {
         position: absolute;
-        top: 53px;   
+        top: 53px;
         left: 12px;
     }
 
     #cognome_err {
         position: absolute;
         top: 53px;
-        right: 92px; 
+        right: 92px;
     }
 
     #preferenza_err {
         position: absolute;
-        top: 263px;  
+        top: 263px;
         left: 12px;
     }
 
