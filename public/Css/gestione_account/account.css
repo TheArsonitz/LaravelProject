@@ -3,7 +3,10 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-/* Parte superiore della barra di navigazione */
+
+
+
+
 
 #top-nav {
     background-color: #F5F5F5;
@@ -182,7 +185,10 @@ body {
 }
 
 
-/* Parte inferiore della barra di navigazione */
+
+
+
+
 
 #bottom-nav {
     height: 60px;
@@ -358,7 +364,6 @@ body {
 
 .categories-panel {
     padding: 10px 0;
-    /* Serve per non aumentare l'area del block per l'hover */
 }
 
 .categories-panel a span:hover {
@@ -421,7 +426,14 @@ body {
     margin-right: 75px;
 }
 
-/* Inizio della sezione gestione account */
+
+
+
+
+
+
+
+
 
 #sezione-gestione-account {
     display: flex;
@@ -610,7 +622,14 @@ div.errore {
     top: 267px;
 }
 
-/* Inizio del footer */
+
+
+
+
+
+
+
+
 
 footer {
     padding: 48px;
@@ -623,7 +642,14 @@ footer {
     margin-bottom: 60px;
 }
 
-/* Introduco top-footer-menu per dividere il menu dalla località in modo più preciso */
+
+
+
+
+
+
+
+
 
 #top-footer-menu {
     width: 70%;
@@ -653,7 +679,6 @@ footer {
 .text-top-footer {
     line-height: 32px;
     margin: 0;
-    /* Poiché sto usando p che ha dei margini pre-impostati, così li rimuovo*/
 }
 
 .text-top-footer a {
@@ -678,10 +703,6 @@ footer {
     display: flex;
     align-items: center;
     height: 19px;
-    /* Ho messo flex, perché con
-    block l'immagine e il testo non erano allineati,
-    mettendo flex esso si dispone al centro e quindi uso height per sistemare
-    questo problema*/
     cursor: pointer;
 }
 
@@ -696,7 +717,14 @@ footer {
     color: #757575;
 }
 
-/* Inizio bottom-footer */
+
+
+
+
+
+
+
+
 
 #bottom-footer {
     display: flex;
@@ -965,7 +993,6 @@ footer {
 }
 
 #modale-elm.modale {
-    /*Mi serve perché sennò non posso centrare il pannello di eliminazione*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1024,7 +1051,15 @@ footer {
 }
 
 
-/*Media query*/
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 768px) {
 
@@ -1147,10 +1182,6 @@ footer {
 
     #Guide-panel span {
         margin: 0px;
-        /* Metto questo perché
-        con il selettore di prima ho preso anche lo
-        span dentro Guide-panel, quindi è come se stessi
-        aggiungendo un margin solo a "Guide " */
     }
 
     #bottom-footer a {
@@ -1229,7 +1260,6 @@ footer {
         line-height: 1.4;
     }
 
-    /* Qui aggiungo la parte relativa alla gestione dell'account */
 
     #sezione-gestione-account {
         margin-top: 60px;

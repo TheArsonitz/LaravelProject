@@ -41,7 +41,7 @@ function apriPreferenze(event) {
 }
 
 function selezionaOpzione(event) {
-    //Devo stoppare il bubbling
+
     event.stopPropagation();
 
     const preferenzaScelta = event.currentTarget.textContent;
@@ -91,7 +91,6 @@ function checkNome(event) {
 
         const erroreNome = document.querySelector("#errore_php");
 
-        //Cancello l'eventuale errore generato dal php
         if (erroreNome) {
             erroreNome.remove();
         }
@@ -118,7 +117,6 @@ function checkCognome(event) {
 
         const erroreNome = document.querySelector("#errore_php");
 
-        //Cancello l'eventuale errore generato dal php
         if (erroreNome) {
             erroreNome.remove();
         }
@@ -145,7 +143,6 @@ function checkPassword(event) {
 
         const erroreNome = document.querySelector("#errore_php");
 
-        //Cancello l'eventuale errore generato dal php
         if (erroreNome) {
             erroreNome.remove();
         }
@@ -178,7 +175,6 @@ function checkPreferenza(event) {
 
         const erroreNome = document.querySelector("#errore_php");
 
-        //Cancello l'eventuale errore generato dal php
         if (erroreNome) {
             erroreNome.remove();
         }
@@ -205,7 +201,6 @@ function checkData(event) {
 
     const erroreNome = document.querySelector("#errore_php");
 
-    //Cancello l'eventuale errore generato dal php
     if (erroreNome) {
         erroreNome.remove();
     }

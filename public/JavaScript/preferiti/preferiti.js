@@ -3,7 +3,7 @@ searchBar.addEventListener("click", apriRicerca);
 const mobileSearchBar = document.querySelector("#mobile-search-bar");
 mobileSearchBar.addEventListener("click", apriRicerca);
 
-//Oggetto che contiene le ricerche più popolari
+
 const ricerchePopolari = {
     0: "challenger",
     1: "nike challenger",
@@ -19,28 +19,28 @@ function apriRicerca() {
 
     const menu = document.querySelector("#home-page-header");
 
-    //Sto settando tutto per aprire il menù di ricerca
+
     menu.classList.add("modale")
     document.body.classList.add("no-scroll");
     document.querySelector("#top-nav").classList.add("hidden");
     document.querySelector("#bottom-nav").classList.add("hidden");
 
-    //L'if serve per applicare il pattern GoF Singleton dato che voglio creare il menù una sola volta
+
     let structMenu = document.querySelector("#menu-search-bar");
     if (!structMenu) {
 
-        //Sto creando la struttura generale del menù
+
         structMenu = document.createElement("div");
         structMenu.id = "menu-search-bar";
         menu.appendChild(structMenu);
 
-        //A questo punto divido il structMenu in:
 
-        //Parte superiore
+
+
         const UpperMenu = document.createElement("div");
         UpperMenu.id = "upper-menu-search-bar";
 
-        //Logo parte superiore
+
         const imgUpperMenu = document.createElement("img")
         imgUpperMenu.src = "/LaravelNikeWebsite/public/Images/logo-nero.png";
         imgUpperMenu.id = "nike-logo-newbar";
@@ -59,7 +59,7 @@ function apriRicerca() {
 
         UpperMenu.appendChild(imgUpperMenu);
 
-        //Barra di ricerca parte superiore
+
         const newSearchBar = document.createElement("form");
         newSearchBar.id = "new-search-bar";
 
@@ -75,24 +75,24 @@ function apriRicerca() {
         inputSearchBar.type = "submit";
         inputSearchBar.classList.add("hidden");
 
-        //Listener collegato al form per inviare i dati
+
         newSearchBar.addEventListener('submit', ricerca);
 
-        //Collego al form i vari componenti
+
         newSearchBar.appendChild(imgNewSearchBar);
         newSearchBar.appendChild(textSearchBar);
         newSearchBar.appendChild(inputSearchBar);
-        //Collego il form al menu
+
         UpperMenu.appendChild(newSearchBar);
 
-        //Pulsante parte superiore per uscire dal menu
+
         const exitMenu = document.createElement("div");
         exitMenu.textContent = 'Annulla';
         exitMenu.id = "exit-search-button"
         exitMenu.addEventListener("click", chiudiRicerca);
         UpperMenu.appendChild(exitMenu);
 
-        //Parte inferiore
+
         const BottomMenu = document.createElement("div");
         BottomMenu.id = "bottom-menu-search-bar";
 
@@ -114,11 +114,11 @@ function apriRicerca() {
             buttonsSection.appendChild(button);
         }
 
-        //Aggiungo parte sup e inf al structMenu
+
         structMenu.appendChild(UpperMenu);
         structMenu.appendChild(BottomMenu);
     }
-    //se esiste già tolgo semplicemente la classe hidden che avrò inserito quando l'ho chiuso
+
     else {
         structMenu.classList.remove("hidden");
     }
@@ -138,7 +138,7 @@ function ErroreDiRete(error) {
     return null;
 }
 
-//API per prodotti
+
 function ricerca(event) {
     event.preventDefault();
 
@@ -303,7 +303,7 @@ function aggiungiPreferito(event) {
 
     likeProdPref.src = "/LaravelNikeWebsite/public/Images/clicked_favourite.png";
 
-    likeProdPref.dataset.pref = 1; //1 preferito, 0 non preferito
+    likeProdPref.dataset.pref = 1;
     const idProdotto = likeProdPref.dataset.id;
 
     const form = document.createElement("form");
@@ -369,7 +369,7 @@ function rimuoviPreferito(event) {
 
     likeProdPref.src = "/LaravelNikeWebsite/public/Images/heart-img.png";
 
-    likeProdPref.dataset.pref = 0; //1 preferito, 0 non preferito
+    likeProdPref.dataset.pref = 0;
     const idProdotto = likeProdPref.dataset.id;
 
     const form = document.createElement("form");
@@ -470,7 +470,7 @@ function chiudiRicerca() {
 
 }
 
-//Devo fare una fetch non appena entro nella pagina per ottenere i risultati da disegnare
+
 
 fetch('api/storeapi').then(SuccessoRichiesta, ErroreDiRete)
     .then(function (articoliJson) {
@@ -524,11 +524,11 @@ function mostraPreferiti(articoliJson, preferiti) {
 
                 const boxSingolo = document.createElement("div");
                 boxSingolo.classList.add("img-box-fotos-pref");
-                boxSingolo.id = "prodotto_" + prodotto.id; //Qui lo utilizzo perché nell'aggiornamento dei preferiti per eliminare l'intero box
+                boxSingolo.id = "prodotto_" + prodotto.id;
 
                 const imgLike = document.createElement("img");
                 imgLike.classList.add("like");
-                imgLike.dataset.id = prodotto.id; //Per i likes lo utilizzo per sapere subito l'elem da aggiungere o rimuovere
+                imgLike.dataset.id = prodotto.id;
 
                 imgLike.src = "/LaravelNikeWebsite/public/Images/clicked_favourite.png";
                 imgLike.dataset.pref = 1;
@@ -573,7 +573,7 @@ function rimuoviDaPaginaPreferito(event) {
     const likeProdPref = event.currentTarget;
     const idlikeProdPref = likeProdPref.dataset.id;
 
-    likeProdPref.dataset.pref = 0; //1 preferito, 0 non preferito
+    likeProdPref.dataset.pref = 0;
     const idProdotto = likeProdPref.dataset.id;
 
     const form = document.createElement("form");

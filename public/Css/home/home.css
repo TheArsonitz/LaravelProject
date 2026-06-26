@@ -3,7 +3,12 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-/* Parte superiore della barra di navigazione */
+
+
+
+
+
+
 
 #top-nav {
     background-color: #F5F5F5;
@@ -182,7 +187,11 @@ body {
 }
 
 
-/* Parte inferiore della barra di navigazione */
+
+
+
+
+
 
 #bottom-nav {
     height: 60px;
@@ -358,7 +367,6 @@ body {
 
 .categories-panel {
     padding: 10px 0;
-    /* Serve per non aumentare l'area del block per l'hover */
 }
 
 .categories-panel a span:hover {
@@ -421,9 +429,13 @@ body {
     margin-right: 75px;
 }
 
-/* Inizio Article */
 
-/* Inizio Sezione 1*/
+
+
+
+
+
+
 #sezione-1 {
     background-image: url(https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_2206,c_limit/404cf11c-a4a8-48e6-a3d9-3afdd6c34987/nike-just-do-it.png);
     background-size: cover;
@@ -483,7 +495,12 @@ body {
     background-color: #D1D1D1;
 }
 
-/* Inizio Sezione 2*/
+
+
+
+
+
+
 
 #sezione-2 .buttons {
     background-color: white;
@@ -554,7 +571,12 @@ body {
     padding-left: 48px;
 }
 
-/*Sezione 2: Immagine 1*/
+
+
+
+
+
+
 
 #sezione-2-title1 {
     font-size: 16px;
@@ -570,14 +592,17 @@ body {
     margin-bottom: 27px;
 }
 
-/* Serve per allineare i bottoni quando ce ne sono almeno 2 */
-
 .sezione-2-container-btns {
     display: flex;
     flex-direction: row;
 }
 
-/*Sezione 2: Immagine 2*/
+
+
+
+
+
+
 
 #sezione-2-title2 {
     font-size: 16px;
@@ -593,14 +618,17 @@ body {
     margin-bottom: 21px;
 }
 
-/* Serve per regolare il padding di tutti i bottoni acquista*/
-
 #sezione-2 .acquista {
     width: 100px;
     margin-right: 6px;
 }
 
-/*Sezione 2: Immagine 3*/
+
+
+
+
+
+
 
 #sezione-2-title3 {
     font-size: 16px;
@@ -621,7 +649,12 @@ body {
     margin-left: 6px;
 }
 
-/*Sezione 2: Immagine 4*/
+
+
+
+
+
+
 
 #sezione-2-title4 {
     font-size: 16px;
@@ -637,7 +670,14 @@ body {
     margin-bottom: 25px;
 }
 
-/* Inizio Sezione 3 */
+
+
+
+
+
+
+
+
 #sezione-3 {
     background-image: url(https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_2151,c_limit/41d33981-e07b-4157-acfc-a1394091d983/nike-just-do-it.png);
     height: 100vh;
@@ -705,7 +745,12 @@ body {
     background-color: #D1D1D1;
 }
 
-/* Inizio Sezione 4 */
+
+
+
+
+
+
 
 #sezione-4 {
     width: 95%;
@@ -715,8 +760,6 @@ body {
 
     margin: 48px auto 0 auto;
 }
-
-/* Sezione 4: top */
 
 #sezione-4-top {
     margin-bottom: 70px;
@@ -867,7 +910,12 @@ body {
     background-color: #F5F5F5;
 }
 
-/* Sezione 4: bottom */
+
+
+
+
+
+
 
 #sezione-4-bottom {
     display: flex;
@@ -898,7 +946,12 @@ body {
     color: #111111;
 }
 
-/* Inizio del footer */
+
+
+
+
+
+
 
 footer {
     padding: 48px;
@@ -915,8 +968,6 @@ footer {
     display: flex;
     justify-content: space-between;
 }
-
-/* Introduco top-footer-menu per dividere il menu dalla località in modo più preciso */
 
 #top-footer-menu {
     width: 70%;
@@ -946,7 +997,6 @@ footer {
 .text-top-footer {
     line-height: 32px;
     margin: 0;
-    /* Poiché sto usando p che ha dei margini pre-impostati, così li rimuovo*/
 }
 
 .text-top-footer a {
@@ -971,10 +1021,6 @@ footer {
     display: flex;
     align-items: center;
     height: 19px;
-    /* Ho messo flex, perché con
-    block l'immagine e il testo non erano allineati,
-    mettendo flex esso si dispone al centro e quindi uso height per sistemare
-    questo problema*/
     cursor: pointer;
 }
 
@@ -989,7 +1035,12 @@ footer {
     color: #757575;
 }
 
-/* Inizio bottom-footer */
+
+
+
+
+
+
 
 #bottom-footer {
     display: flex;
@@ -1395,7 +1446,9 @@ footer {
 
 
 
-/* Mobile Version */
+
+
+
 
 @media (max-width: 971px) {
 
@@ -1701,10 +1754,6 @@ footer {
 
     #Guide-panel span {
         margin: 0px;
-        /* Metto questo perché
-        con il selettore di prima ho preso anche lo
-        span dentro Guide-panel, quindi è come se stessi
-        aggiungendo un margin solo a "Guide " */
     }
 
     #bottom-footer a {

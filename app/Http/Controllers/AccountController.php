@@ -20,9 +20,6 @@ class AccountController extends Controller
             return view('account', ['auth' => $auth, 'nome' => session('nome'), 'paese' => $paeseUtente]);
         }
 
-        // In teoria dovrebbe esserci un redirect se non si ha user_id
-        // Tuttavia per come ho strutturato il sito dovrebbe essere impossibile accedere a questa pagina senza aver fatto l'accesso
-        // Lo stesso discorso vale per i metodi sotto
     }
 
     public function ottieniAccount()

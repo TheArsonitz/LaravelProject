@@ -109,7 +109,7 @@
                 <div class="categories-panel">
                     <a href="#"><span>Novità</span></a>
                     <div class="panel-menu-ctgrs" id="Novità-panel">
-                        <!-- Creo questo nuovo div perché quello prima non può essere un flex dato che ho messo display: none -->
+
                         <div class="menu-ctgrs-container">
 
                             <div>
@@ -597,7 +597,7 @@
             <div id="top-footer-divider"> </div>
 
             <div id="top-footer">
-                <!-- Introduco top-footer-menu per dividere il menu dalla località in modo più preciso-->
+
                 <div id="top-footer-menu">
 
                     <div id="Risorse-top-footer">

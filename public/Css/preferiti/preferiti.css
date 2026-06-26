@@ -3,7 +3,12 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-/* Parte superiore della barra di navigazione */
+
+
+
+
+
+
 
 #top-nav {
     background-color: #F5F5F5;
@@ -421,7 +426,12 @@ body {
     margin-right: 75px;
 }
 
-/* Inizio della sezione preferiti */
+
+
+
+
+
+
 
 #sezione-preferiti {
     display: flex;
@@ -494,7 +504,6 @@ footer {
 .text-top-footer {
     line-height: 32px;
     margin: 0;
-    /* Poiché sto usando p che ha dei margini pre-impostati, così li rimuovo*/
 }
 
 .text-top-footer a {
@@ -519,10 +528,6 @@ footer {
     display: flex;
     align-items: center;
     height: 19px;
-    /* Ho messo flex, perché con
-    block l'immagine e il testo non erano allineati,
-    mettendo flex esso si dispone al centro e quindi uso height per sistemare
-    questo problema*/
     cursor: pointer;
 }
 
@@ -537,7 +542,12 @@ footer {
     color: #757575;
 }
 
-/* Inizio bottom-footer */
+
+
+
+
+
+
 
 #bottom-footer {
     display: flex;
@@ -895,7 +905,12 @@ footer {
 
 
 
-/*Inizio media query*/
+
+
+
+
+
+
 @media (max-width: 768px) {
 
     #top-nav {
@@ -1017,10 +1032,6 @@ footer {
 
     #Guide-panel span {
         margin: 0px;
-        /* Metto questo perché
-        con il selettore di prima ho preso anche lo
-        span dentro Guide-panel, quindi è come se stessi
-        aggiungendo un margin solo a "Guide " */
     }
 
     #bottom-footer a {

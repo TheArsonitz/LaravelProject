@@ -13,7 +13,7 @@ h2 {
     text-align: center;
 }
 
-h3{
+h3 {
     font-size: 14px;
 }
 
@@ -24,6 +24,14 @@ p {
 .importante {
     font-weight: bold;
 }
+
+
+
+
+
+
+
+
 
 @media (max-width: 768px) {
     article {

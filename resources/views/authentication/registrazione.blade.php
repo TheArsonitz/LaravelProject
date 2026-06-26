@@ -35,7 +35,9 @@
     @if ($errors->any())
         <div id="errore_php">
             <img src="{{ url('Images/exclamation.png') }}">
-            <span>Qualcosa è andato storto, riprova.</span>
+            @foreach ($errors->all() as $errore)
+                <span>{{ $errore }}</span>
+            @endforeach
         </div>
     @endif
 

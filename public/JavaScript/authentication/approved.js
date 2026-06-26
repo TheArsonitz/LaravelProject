@@ -6,7 +6,6 @@ function checkForm(event) {
         form.password.value.length < 8
     ) {
 
-        //Così elimino l'eventuale errore generato dal php
         const erroreServer = document.querySelector("#pass_sbagl");
 
         if (erroreServer) {

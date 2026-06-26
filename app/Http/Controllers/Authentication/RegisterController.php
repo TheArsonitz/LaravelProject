@@ -15,7 +15,7 @@ class RegisterController extends Controller
 
     public function checkRegistrazione(Request $request)
     {
-        $errori = [];
+        $errori = false;
 
         $nomeUtente = $request->nome;
         $cognomeUtente = $request->cognome;
@@ -25,35 +25,32 @@ class RegisterController extends Controller
         $meseUtente = $request->mese;
         $annoUtente = $request->anno;
 
-        // Avrei potuto fare un $errore = false
-        // dato che nel blade faccio apparire un messaggio generico
-
         if (! isset($nomeUtente) || strlen($nomeUtente) === 0) {
-            $errori[] = 'Il nome è obbligatorio';
+            $errori = true;
         }
 
         if (! isset($cognomeUtente) || strlen($cognomeUtente) === 0) {
-            $errori['cognome'] = 'Il cognome è obbligatorio';
+            $errori = true;
         }
 
         if (! isset($passwordUtente) || strlen($passwordUtente) < 8) {
-            $errori['password'] = 'La password deve contenere almeno 8 caratteri';
+            $errori = true;
         }
 
         if (! isset($preferenzaUtente)) {
-            $errori['preferenza'] = 'La preferenza è obbligatoria';
+            $errori = true;
         }
 
         if (! isset($giornoUtente) || $giornoUtente < 1 || $giornoUtente > 31 ||
             ! isset($meseUtente) || $meseUtente < 1 || $meseUtente > 12 ||
             ! isset($annoUtente) || $annoUtente < 1900 || $annoUtente > date('Y')) {
-            $errori['data_nascita'] = 'La data di nascita non è valida';
+            $errori = true;
         }
 
-        if (count($errori) > 0) {
+        if ($errori === true) {
             return redirect('authentication/registrazione')
                 ->withInput()
-                ->withErrors($errori);
+                ->withErrors(['errori' => 'Qualcosa è andato storto, riprova.']);
         }
 
         $dataNascita = $annoUtente.'-'.$meseUtente.'-'.$giornoUtente;
