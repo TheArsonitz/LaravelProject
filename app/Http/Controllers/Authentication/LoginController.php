@@ -47,37 +47,43 @@ class LoginController extends Controller
 
     public function checkPassword(Request $request)
     {
+        if (session('email') !== null) {
 
-        $errori = [];
+            $errori = [];
 
-        if (! isset($request->password) || strlen($request->password) === 0 ||
-            strlen($request->password) < 8) {
-            $errori['password'] = 'Richiesta invalida';
+            if (! isset($request->password) || strlen($request->password) === 0 ||
+                strlen($request->password) < 8) {
+                $errori['password'] = 'Richiesta invalida';
+            }
+
+            if (count($errori) > 0) {
+                return redirect('authentication/login_password')
+                    ->withErrors($errori);
+            }
+
+            $emailUtente = session('email');
+
+            $utente = User::where('email', $emailUtente)->first();
+
+            $passwordUtente = $utente->password;
+
+            if (password_verify($request->password, $passwordUtente)) {
+                session(['user_id' => $utente->id,
+                    'nome' => $utente->nome,
+                    'paese' => $utente->paese]);
+
+                return redirect('home');
+            } else {
+                $errori['password'] = 'Password errata';
+
+                return redirect('authentication/login_password')
+                    ->withErrors($errori);
+            }
+
         }
 
-        if (count($errori) > 0) {
-            return redirect('authentication/login_password')
-                ->withErrors($errori);
-        }
-
-        $emailUtente = session('email');
-
-        $utente = User::where('email', $emailUtente)->first();
-
-        $passwordUtente = $utente->password;
-
-        if (password_verify($request->password, $passwordUtente)) {
-            session(['user_id' => $utente->id,
-                'nome' => $utente->nome,
-                'paese' => $utente->paese]);
-
-            return redirect('home');
-        } else {
-            $errori['password'] = 'Password errata';
-
-            return redirect('authentication/login_password')
-                ->withErrors($errori);
-        }
+        return redirect('authentication/login')
+            ->withErrors(['notLogged' => 'Utente non trovato.']);
 
     }
 }

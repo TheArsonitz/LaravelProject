@@ -45,17 +45,17 @@ function apriRicerca() {
 
 
         const imgUpperMenu = document.createElement("img")
-        imgUpperMenu.src = "/LaravelNikeWebsite/public/Images/logo-nero.png";
+        imgUpperMenu.src = urlImg + "/Images/logo-nero.png";
         imgUpperMenu.id = "nike-logo-newbar";
         imgUpperMenu.dataset.logo = "nero"
 
         imgUpperMenu.addEventListener("click", function () {
             if (imgUpperMenu.dataset.logo === "nero") {
-                imgUpperMenu.src = "/LaravelNikeWebsite/public/Images/logo-arancione.png"
+                imgUpperMenu.src = urlImg + "/logo-arancione.png"
                 imgUpperMenu.dataset.logo = "arancione"
             }
             else {
-                imgUpperMenu.src = "/LaravelNikeWebsite/public/Images/logo-nero.png"
+                imgUpperMenu.src = urlImg + "/logo-nero.png"
                 imgUpperMenu.dataset.logo = "nero"
             }
         })
@@ -67,7 +67,7 @@ function apriRicerca() {
         newSearchBar.id = "new-search-bar";
 
         const imgNewSearchBar = document.createElement("img");
-        imgNewSearchBar.src = "/LaravelNikeWebsite/public/Images/search-img.png";
+        imgNewSearchBar.src = urlImg + "/search-img.png";
 
         const textSearchBar = document.createElement("input");
         textSearchBar.type = "text";
@@ -213,11 +213,11 @@ function mostraArticoli(articoliJson, oggettoCercato, preferiti) {
                 imgLike.dataset.id = prodotto.id;
 
                 if (preferiti.includes(Number(prodotto.id))) {
-                    imgLike.src = "/LaravelNikeWebsite/public/Images/clicked_favourite.png";
+                    imgLike.src = urlImg + "/clicked_favourite.png";
                     imgLike.dataset.pref = 1;
                     imgLike.addEventListener("click", rimuoviPreferito);
                 } else {
-                    imgLike.src = "/LaravelNikeWebsite/public/Images/heart-img.png";
+                    imgLike.src = urlImg + "/heart-img.png";
                     imgLike.dataset.pref = 0;
                     imgLike.addEventListener("click", aggiungiPreferito);
                 }
@@ -293,7 +293,7 @@ function aggiungiPreferito(event) {
 
     const prodPref = event.currentTarget;
 
-    prodPref.src = "/LaravelNikeWebsite/public/Images/clicked_favourite.png";
+    prodPref.src = urlImg + "/clicked_favourite.png";
 
     prodPref.dataset.pref = 1;
     const idProdotto = prodPref.dataset.id;
@@ -340,7 +340,7 @@ function aggiungiPreferito(event) {
 function rimuoviPreferito(event) {
     const prodPref = event.currentTarget;
 
-    prodPref.src = "/LaravelNikeWebsite/public/Images/heart-img.png";
+    prodPref.src = urlImg + "/heart-img.png";
 
     prodPref.dataset.pref = 0;
     const idProdotto = prodPref.dataset.id;
@@ -555,7 +555,7 @@ function consigliMeteo(json) {
 
         const bellNot = document.createElement("img");
         bellNot.id = "not-bell";
-        bellNot.src = "/LaravelNikeWebsite/public/Images/bell_first_not.png";
+        bellNot.src = urlImg + "/bell_first_not.png";
         notificationIcon.appendChild(bellNot);
 
         const redNot = document.createElement("div");
@@ -750,7 +750,7 @@ function chiudiNotifica() {
     notificationIcon.classList.remove("hidden");
 
     const bellNot = document.querySelector("#not-bell");
-    bellNot.src = "/LaravelNikeWebsite/public/Images/bell_open.png";
+    bellNot.src = urlImg + "/bell_open.png";
 
     document.body.classList.remove("no-scroll");
 }

@@ -20,6 +20,8 @@ class AccountController extends Controller
             return view('account', ['auth' => $auth, 'nome' => session('nome'), 'paese' => $paeseUtente]);
         }
 
+        return redirect('authentication/login');
+
     }
 
     public function ottieniAccount()
@@ -33,6 +35,8 @@ class AccountController extends Controller
 
         }
 
+        return redirect('authentication/login');
+
     }
 
     public function aggiornaAccount(Request $request)
@@ -41,7 +45,7 @@ class AccountController extends Controller
 
             $utente = User::find(session('user_id'));
 
-            if (session('email') !== $request->email) {
+            if (session('email') !== $request->email && filter_var($request->email, FILTER_VALIDATE_EMAIL)) {
                 $utente->email = $request->email;
                 session(['email' => $request->email]);
             }
@@ -53,11 +57,11 @@ class AccountController extends Controller
                 session(['paese' => $request->paese]);
             }
 
-            if (! empty($request->password)) {
+            if (! empty($request->password) && strlen($request->password) < 8) {
                 $utente->password = bcrypt($request->password);
             }
 
-            if (! empty($request->telefono)) {
+            if (! empty($request->telefono) && strlen($request->telefono) === 10) {
                 $utente->telefono = $request->telefono;
             }
 
@@ -66,13 +70,15 @@ class AccountController extends Controller
             return redirect('gestione_account/account');
         }
 
+        return redirect('authentication/login');
+
     }
 
     public function eliminaAccount()
     {
         if (Session::has('user_id')) {
             $utente = User::find(session('user_id'));
-            $utente->favourite()->delete();
+            $utente->favourites()->delete();
 
             $utente->delete();
 
@@ -81,6 +87,8 @@ class AccountController extends Controller
             return redirect('home');
 
         }
+
+        return redirect('authentication/login');
 
     }
 }

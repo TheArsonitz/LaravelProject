@@ -58,7 +58,7 @@ class PreferitiController extends Controller
                 $nuovoPreferito->save();
             } elseif ($request->azione == 0) {
                 $utente = User::find(session('user_id'));
-                $PreferitoDaEliminare = $utente->favourite()
+                $PreferitoDaEliminare = $utente->favourites()
                     ->where('prodotto_id', $request->prodotto_id);
                 $PreferitoDaEliminare->delete();
             }

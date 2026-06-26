@@ -18,6 +18,9 @@
     <script>
         urlLogin = "{{ url('/authentication/login') }}";
     </script>
+    <script>
+        urlImg = "{{ url('Images') }}";
+    </script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

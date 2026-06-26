@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model {
-    
+class User extends Model
+{
     public $timestamps = false;
 
-    public function favourite() {
+    public function favourites()
+    {
         return $this->hasMany(Favourite::class);
     }
-
 }
