@@ -50,14 +50,25 @@ class AccountController extends Controller
                 session(['email' => $request->email]);
             }
 
-            $utente->data_nascita = $request->data_nascita;
+            if ($utente->data_nascita !== $request->data_nascita && strlen($request->data_nascita) === 10) {
+
+                $stringaAnno = substr($request->data_nascita, 0, 4);
+                $stringaMese = substr($request->data_nascita, 5, 2);
+                $stringaGiorno = substr($request->data_nascita, 8, 2);
+
+                if ((strcmp($stringaAnno, '1900') >= 0 && strcmp($stringaAnno, date('Y')) <= 0) &&
+                    (strcmp($stringaMese, '01') >= 0 && strcmp($stringaMese, 12) <= 0) &&
+                    (strcmp($stringaGiorno, '01') >= 0 && strcmp($stringaGiorno, '31') <= 0)) {
+                    $utente->data_nascita = $request->data_nascita;
+                }
+            }
 
             if (session('paese') !== $request->paese) {
                 $utente->paese = $request->paese;
                 session(['paese' => $request->paese]);
             }
 
-            if (! empty($request->password) && strlen($request->password) < 8) {
+            if (! empty($request->password) && strlen($request->password) >= 8) {
                 $utente->password = bcrypt($request->password);
             }
 

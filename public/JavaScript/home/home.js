@@ -45,7 +45,7 @@ function apriRicerca() {
 
 
         const imgUpperMenu = document.createElement("img")
-        imgUpperMenu.src = urlImg + "/Images/logo-nero.png";
+        imgUpperMenu.src = urlImg + "/logo-nero.png";
         imgUpperMenu.id = "nike-logo-newbar";
         imgUpperMenu.dataset.logo = "nero"
 

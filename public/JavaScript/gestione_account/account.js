@@ -535,7 +535,7 @@ function aggiungiPreferito(event) {
 
     const prodPref = event.currentTarget;
 
-    prodPref.src = urlImg + "clicked_favourite.png";
+    prodPref.src = urlImg + "/clicked_favourite.png";
 
     prodPref.dataset.pref = 1;
     const idProdotto = prodPref.dataset.id;

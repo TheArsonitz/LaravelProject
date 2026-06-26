@@ -33,7 +33,7 @@ class PreferitiController extends Controller
         if ($auth) {
 
             $utente = User::find(session('user_id'));
-            $preferiti = $utente->favourite;
+            $preferiti = $utente->favourites;
 
             foreach ($preferiti as $preferito) {
                 $response[] = $preferito->prodotto_id;
