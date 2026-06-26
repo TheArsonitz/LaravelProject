@@ -57,7 +57,7 @@ class AccountController extends Controller
                 $stringaGiorno = substr($request->data_nascita, 8, 2);
 
                 if ((strcmp($stringaAnno, '1900') >= 0 && strcmp($stringaAnno, date('Y')) <= 0) &&
-                    (strcmp($stringaMese, '01') >= 0 && strcmp($stringaMese, 12) <= 0) &&
+                    (strcmp($stringaMese, '01') >= 0 && strcmp($stringaMese, '12') <= 0) &&
                     (strcmp($stringaGiorno, '01') >= 0 && strcmp($stringaGiorno, '31') <= 0)) {
                     $utente->data_nascita = $request->data_nascita;
                 }
