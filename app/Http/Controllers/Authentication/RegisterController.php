@@ -10,7 +10,11 @@ class RegisterController extends Controller
 {
     public function registrazione()
     {
-        return view('authentication.registrazione');
+        if (! session('email')) {
+            return redirect('authentication/login');
+        } else {
+            return view('authentication.registrazione');
+        }
     }
 
     public function checkRegistrazione(Request $request)

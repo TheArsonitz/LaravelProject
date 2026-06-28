@@ -26,7 +26,8 @@ function apriRicerca() {
     document.querySelector("#bottom-nav").classList.add("hidden");
 
     const notificationIcon = document.querySelector("#not-icon");
-    notificationIcon.classList.add("hidden");
+    if (notificationIcon)
+        notificationIcon.classList.add("hidden");
 
 
     let structMenu = document.querySelector("#menu-search-bar");
@@ -374,7 +375,8 @@ function chiudiRicerca() {
     structMenu.classList.add("hidden");
 
     const notificationIcon = document.querySelector("#not-icon");
-    notificationIcon.classList.remove("hidden");
+    if (notificationIcon)
+        notificationIcon.classList.remove("hidden");
 
     if (document.querySelector("#box-bottom-menu").classList.contains("hidden")) {
 
@@ -597,7 +599,7 @@ function apriNotifica() {
         let imgMeteo = "";
 
         for (let giorno of meteo.forecast.forecastday) {
-            if (gorno.day.condition.code === codiceMeteo) {
+            if (giorno.day.condition.code === codiceMeteo) {
                 imgMeteo = "https:" + giorno.day.condition.icon;
                 break;
             }
@@ -807,11 +809,17 @@ function apriMenuMobile() {
 
 function chiudiMenuMobile() {
 
-    document.querySelector("#not-icon").classList.remove("hidden");
+    const notificationIcon = document.querySelector("#not-icon");
+
+    if (notificationIcon) {
+        notificationIcon.classList.remove("hidden");
+    }
+
     mobileSearchBar.addEventListener("click", apriRicerca);
 
     document.body.classList.remove("no-scroll");
     document.querySelector("#home-page-header").classList.remove("modale");
 
     const pannelloLaterale = document.querySelector("#pannello-lat").classList.add("hidden");
+
 }
