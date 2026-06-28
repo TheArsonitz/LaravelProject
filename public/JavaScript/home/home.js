@@ -741,7 +741,10 @@ mobileMenu.addEventListener("click", apriMenuMobile);
 
 function apriMenuMobile() {
 
-    document.querySelector("#not-icon").classList.add("hidden");
+    const notificationIcon = document.querySelector("#not-icon");
+
+    if (notificationIcon)
+        notificationIcon.classList.add("hidden");
 
     mobileSearchBar.removeEventListener("click", apriRicerca);
 
