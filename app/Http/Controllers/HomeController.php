@@ -18,7 +18,7 @@ class HomeController extends Controller
 
         $auth = false;
 
-        return view('home', ['auth' => $auth, 'nome' => null, 'paese' => null]);
+        return view('home', ['auth' => $auth]);
 
     }
 }

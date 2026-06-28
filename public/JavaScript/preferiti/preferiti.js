@@ -20,7 +20,7 @@ function apriRicerca() {
     const menu = document.querySelector("#home-page-header");
 
 
-    menu.classList.add("modale")
+    menu.classList.add("modale");
     document.body.classList.add("no-scroll");
     document.querySelector("#top-nav").classList.add("hidden");
     document.querySelector("#bottom-nav").classList.add("hidden");
@@ -150,133 +150,137 @@ function ricerca(event) {
     const barraRicerca = document.querySelector("#text-search-upperbar");
     const oggettoCercato = barraRicerca.value;
 
-    fetch('api/storeapi').then(SuccessoRichiesta, ErroreDiRete).then(function (json) {
+    fetch('api/storeapi').then(SuccessoRichiesta, ErroreDiRete)
+        .then(function (json) {
 
-        fetch('preferiti/ottieni_preferiti')
-            .then(SuccessoRichiesta, ErroreDiRete)
-            .then(function (preferiti) {
+            if (json == null)
+                console.log("Si è verificato un errore. Riprova.")
+            else {
+                fetch('preferiti/ottieni_preferiti')
+                    .then(SuccessoRichiesta, ErroreDiRete)
+                    .then(function (preferiti) {
 
-                mostraArticoli(json, oggettoCercato, preferiti);
+                        if (preferiti == null)
+                            console.log("Si è verificato un errore. Riprova.");
+                        else
+                            mostraArticoli(json, oggettoCercato, preferiti);
+
+                    }
+
+                    );
             }
 
-            );
-
-    }
-    );
+        }
+        );
 
 }
 
 function mostraArticoli(articoliJson, oggettoCercato, preferiti) {
 
-    if (articoliJson === null)
-        console.log("Nessun dato ricevuto, verifica eventuali errori di stato o di rete!");
-    else {
+    const risultatoRicerca = [];
+    let i = 0;
+    oggettoCercato = oggettoCercato.toLowerCase();
 
-        const risultatoRicerca = [];
-        let i = 0;
-        oggettoCercato = oggettoCercato.toLowerCase();
+    for (let articolo of articoliJson) {
 
-        for (let articolo of articoliJson) {
+        const titleMinusc = articolo.title.toLowerCase();
 
-            const titleMinusc = articolo.title.toLowerCase();
-
-            if (titleMinusc.includes(oggettoCercato) && i < 3) {
-                risultatoRicerca.unshift(articolo);
-                i++;
-            }
-
-        }
-
-        if (i !== 0) {
-
-            const notFoundEl = document.querySelector("#search-not-found");
-            const vecchiRisultati = document.querySelector("#box-fotos");
-            const buttonsSearchBar = document.querySelector("#box-bottom-menu");
-
-            if (notFoundEl) {
-                notFoundEl.remove();
-            }
-
-            if (vecchiRisultati) {
-                vecchiRisultati.remove();
-            }
-            if (buttonsSearchBar) {
-                buttonsSearchBar.classList.add("hidden");
-            }
-
-            const bottomMenu = document.querySelector("#bottom-menu-search-bar");
-
-            const boxFoto = document.createElement("div");
-            boxFoto.id = "box-fotos";
-
-            for (let j = 0; j < i; j++) {
-
-                const prodotto = risultatoRicerca[j];
-
-                const boxSingolo = document.createElement("div");
-                boxSingolo.classList.add("img-box-fotos");
-
-                const imgLike = document.createElement("img");
-                imgLike.classList.add("like");
-                imgLike.dataset.id = prodotto.id;
-
-                if (preferiti.includes(Number(prodotto.id))) {
-                    imgLike.src = urlImg + "/clicked_favourite.png";
-                    imgLike.dataset.pref = 1;
-                    imgLike.addEventListener("click", rimuoviPreferito);
-                } else {
-                    imgLike.src = urlImg + "/heart-img.png";
-                    imgLike.dataset.pref = 0;
-                    imgLike.addEventListener("click", aggiungiPreferito);
-                }
-
-                boxSingolo.appendChild(imgLike);
-
-                const img = document.createElement("img");
-                img.src = prodotto.image;
-                boxSingolo.appendChild(img);
-
-                const titolo = document.createElement("h4");
-                titolo.textContent = prodotto.title;
-                boxSingolo.appendChild(titolo);
-
-                const categoria = document.createElement("span");
-                categoria.textContent = prodotto.category;
-                boxSingolo.appendChild(categoria);
-
-                const prezzo = document.createElement("span");
-                prezzo.textContent = prodotto.price + "€";
-                boxSingolo.appendChild(prezzo);
-
-                boxFoto.appendChild(boxSingolo);
-            }
-
-            bottomMenu.appendChild(boxFoto);
-
-        }
-
-        else if (i === 0) {
-            const buttonsSearchBar = document.querySelector("#box-bottom-menu");
-            buttonsSearchBar.classList.add("hidden");
-
-            const vecchiRisultati = document.querySelector("#box-fotos");
-            if (vecchiRisultati) {
-                vecchiRisultati.remove();
-            }
-
-            const notFoundEl = document.querySelector("#search-not-found");
-            if (notFoundEl) {
-                notFoundEl.remove();
-            }
-
-            const notFound = document.createElement("h2")
-            notFound.id = "search-not-found"
-            notFound.textContent = "Siamo spiacenti :( , nessun risultato trovato per: " + oggettoCercato;
-            const bottomMenu = document.querySelector("#bottom-menu-search-bar");
-            bottomMenu.appendChild(notFound);
+        if (titleMinusc.includes(oggettoCercato) && i < 3) {
+            risultatoRicerca.unshift(articolo);
+            i++;
         }
 
     }
+
+    if (i !== 0) {
+
+        const notFoundEl = document.querySelector("#search-not-found");
+        const vecchiRisultati = document.querySelector("#box-fotos");
+        const buttonsSearchBar = document.querySelector("#box-bottom-menu");
+
+        if (notFoundEl) {
+            notFoundEl.remove();
+        }
+
+        if (vecchiRisultati) {
+            vecchiRisultati.remove();
+        }
+        if (buttonsSearchBar) {
+            buttonsSearchBar.classList.add("hidden");
+        }
+
+        const bottomMenu = document.querySelector("#bottom-menu-search-bar");
+
+        const boxFoto = document.createElement("div");
+        boxFoto.id = "box-fotos";
+
+        for (let j = 0; j < i; j++) {
+
+            const prodotto = risultatoRicerca[j];
+
+            const boxSingolo = document.createElement("div");
+            boxSingolo.classList.add("img-box-fotos");
+
+            const imgLike = document.createElement("img");
+            imgLike.classList.add("like");
+            imgLike.dataset.id = prodotto.id;
+
+            if (preferiti.includes(Number(prodotto.id))) {
+                imgLike.src = urlImg + "/clicked_favourite.png";
+                imgLike.dataset.pref = 1;
+                imgLike.addEventListener("click", rimuoviPreferito);
+            } else {
+                imgLike.src = urlImg + "/heart-img.png";
+                imgLike.dataset.pref = 0;
+                imgLike.addEventListener("click", aggiungiPreferito);
+            }
+
+            boxSingolo.appendChild(imgLike);
+
+            const img = document.createElement("img");
+            img.src = prodotto.image;
+            boxSingolo.appendChild(img);
+
+            const titolo = document.createElement("h4");
+            titolo.textContent = prodotto.title;
+            boxSingolo.appendChild(titolo);
+
+            const categoria = document.createElement("span");
+            categoria.textContent = prodotto.category;
+            boxSingolo.appendChild(categoria);
+
+            const prezzo = document.createElement("span");
+            prezzo.textContent = prodotto.price + "€";
+            boxSingolo.appendChild(prezzo);
+
+            boxFoto.appendChild(boxSingolo);
+        }
+
+        bottomMenu.appendChild(boxFoto);
+
+    }
+
+    else if (i === 0) {
+        const buttonsSearchBar = document.querySelector("#box-bottom-menu");
+        buttonsSearchBar.classList.add("hidden");
+
+        const vecchiRisultati = document.querySelector("#box-fotos");
+        if (vecchiRisultati) {
+            vecchiRisultati.remove();
+        }
+
+        const notFoundEl = document.querySelector("#search-not-found");
+        if (notFoundEl) {
+            notFoundEl.remove();
+        }
+
+        const notFound = document.createElement("h2")
+        notFound.id = "search-not-found"
+        notFound.textContent = "Siamo spiacenti :( , nessun risultato trovato per: " + oggettoCercato;
+        const bottomMenu = document.querySelector("#bottom-menu-search-bar");
+        bottomMenu.appendChild(notFound);
+    }
+
 }
 
 
@@ -306,36 +310,24 @@ function aggiungiPreferito(event) {
     likeProdPref.dataset.pref = 1;
     const idProdotto = likeProdPref.dataset.id;
 
-    const form = document.createElement("form");
-
-    const csrfInput = document.createElement("input");
-    csrfInput.type = "hidden";
-    csrfInput.name = "_token";
-    csrfInput.value = document.querySelector('meta[name="csrf-token"]').content;
-    form.appendChild(csrfInput);
-
-    const inputForm = document.createElement("input");
-    inputForm.type = "text";
-    inputForm.name = "prodotto_id";
-    inputForm.value = idProdotto;
-
-    form.appendChild(inputForm);
-
-    const inputForm2 = document.createElement("input");
-    inputForm2.type = "text";
-    inputForm2.name = "azione";
-    inputForm2.value = likeProdPref.dataset.pref;
-
-    form.appendChild(inputForm2);
+    formData = new FormData();
+    formData.append('_token', document.querySelector('meta[name="csrf-token"]').content);
+    formData.append('prodotto_id', idProdotto);
+    formData.append('azione', likeProdPref.dataset.pref);
 
     const form_data = {
         method: 'post',
-        body: new FormData(form)
+        body: formData
     };
 
     fetch("preferiti/gestione_preferiti", form_data)
-        .then(response => response.text())
-        .then(testoRisposta => console.log("Risposta del server:", testoRisposta));
+        .then(SuccessoRichiesta, ErroreDiRete)
+        .then(function (risposta) {
+            if (risposta === null)
+                console.log("Errore di rete.");
+            else
+                console.log(risposta.status);
+        });
 
     likeProdPref.removeEventListener("click", aggiungiPreferito);
     likeProdPref.addEventListener("click", rimuoviPreferito);
@@ -353,12 +345,23 @@ function aggiungiPreferito(event) {
     fetch('api/storeapi')
         .then(SuccessoRichiesta, ErroreDiRete)
         .then(function (articoliJson) {
-            fetch('preferiti/ottieni_preferiti')
-                .then(SuccessoRichiesta, ErroreDiRete)
-                .then(function (preferiti) {
-                    mostraPreferiti(articoliJson, preferiti);
-                }
-                );
+
+            if (articoliJson == null)
+                console.log("Si è verificato un errore. Riprova.");
+            else {
+
+                fetch('preferiti/ottieni_preferiti')
+                    .then(SuccessoRichiesta, ErroreDiRete)
+                    .then(function (preferiti) {
+
+                        if (preferiti == null)
+                            console.log("Si è verificato un errore. Riprova.");
+                        else
+                            mostraPreferiti(articoliJson, preferiti);
+
+                    }
+                    );
+            }
         }
         );
 
@@ -372,36 +375,24 @@ function rimuoviPreferito(event) {
     likeProdPref.dataset.pref = 0;
     const idProdotto = likeProdPref.dataset.id;
 
-    const form = document.createElement("form");
-
-    const csrfInput = document.createElement("input");
-    csrfInput.type = "hidden";
-    csrfInput.name = "_token";
-    csrfInput.value = document.querySelector('meta[name="csrf-token"]').content;
-    form.appendChild(csrfInput);
-
-    const inputForm = document.createElement("input");
-    inputForm.type = "text";
-    inputForm.name = "prodotto_id";
-    inputForm.value = idProdotto;
-
-    form.appendChild(inputForm);
-
-    const inputForm2 = document.createElement("input");
-    inputForm2.type = "text";
-    inputForm2.name = "azione";
-    inputForm2.value = likeProdPref.dataset.pref;
-
-    form.appendChild(inputForm2);
+    formData = new FormData();
+    formData.append('_token', document.querySelector('meta[name="csrf-token"]').content);
+    formData.append('prodotto_id', idProdotto);
+    formData.append('azione', likeProdPref.dataset.pref);
 
     const form_data = {
         method: 'post',
-        body: new FormData(form)
+        body: formData
     };
 
     fetch("preferiti/gestione_preferiti", form_data)
-        .then(response => response.text())
-        .then(testoRisposta => console.log("Risposta del server:", testoRisposta));
+        .then(SuccessoRichiesta, ErroreDiRete)
+        .then(function (risposta) {
+            if (risposta === null)
+                console.log("Errore di rete.");
+            else
+                console.log(risposta.status);
+        });
 
     likeProdPref.removeEventListener("click", rimuoviPreferito);
     likeProdPref.addEventListener("click", aggiungiPreferito);
@@ -472,99 +463,104 @@ function chiudiRicerca() {
 
 
 
-fetch('api/storeapi').then(SuccessoRichiesta, ErroreDiRete)
+fetch('api/storeapi')
+    .then(SuccessoRichiesta, ErroreDiRete)
     .then(function (articoliJson) {
 
-        fetch('preferiti/ottieni_preferiti')
-            .then(SuccessoRichiesta, ErroreDiRete)
-            .then(function (preferiti) {
-                mostraPreferiti(articoliJson, preferiti);
-            }
+        if (articoliJson == null)
+            console.log("Si è verificato un errore. Riprova.");
+        else {
+            fetch('preferiti/ottieni_preferiti')
+                .then(SuccessoRichiesta, ErroreDiRete)
+                .then(function (preferiti) {
 
-            );
+                    if (preferiti == null)
+                        console.log("Si è verificato un errore. Riprova.");
+                    else
+                        mostraPreferiti(articoliJson, preferiti);
 
+                }
+
+                );
+        }
     }
     );
 
 
 function mostraPreferiti(articoliJson, preferiti) {
-    if (articoliJson === null)
-        console.log("Nessun dato ricevuto, verifica eventuali errori di stato o di rete!");
+
+    if (preferiti.length === 0) {
+        const sezionePreferiti = document.querySelector("#sezione-preferiti");
+
+        const noPreferiti = document.createElement("p");
+        noPreferiti.id = "no_pref";
+        noPreferiti.textContent = "Gli articoli aggiunti ai preferiti saranno salvati qui.";
+
+        sezionePreferiti.appendChild(noPreferiti);
+    }
     else {
 
-        if (preferiti.length === 0) {
-            const sezionePreferiti = document.querySelector("#sezione-preferiti");
+        const oggettiPreferiti = [];
 
-            const noPreferiti = document.createElement("p");
-            noPreferiti.id = "no_pref";
-            noPreferiti.textContent = "Gli articoli aggiunti ai preferiti saranno salvati qui.";
+        for (let i = 0; i < articoliJson.length; i++) {
 
-            sezionePreferiti.appendChild(noPreferiti);
-        }
-        else {
-
-            const oggettiPreferiti = [];
-
-            for (let i = 0; i < articoliJson.length; i++) {
-
-                if ((preferiti.includes(Number(articoliJson[i].id)))) {
-                    oggettiPreferiti.push(articoliJson[i]);
-                }
-
+            if ((preferiti.includes(Number(articoliJson[i].id)))) {
+                oggettiPreferiti.push(articoliJson[i]);
             }
 
-            const sezionePreferiti = document.querySelector("#sezione-preferiti");
-
-            const boxFoto = document.createElement("div");
-            boxFoto.id = "box-fotos-pref";
-
-            for (let j = 0; j < oggettiPreferiti.length; j++) {
-
-                const prodotto = oggettiPreferiti[j];
-
-                const boxSingolo = document.createElement("div");
-                boxSingolo.classList.add("img-box-fotos-pref");
-                boxSingolo.id = "prodotto_" + prodotto.id;
-
-                const imgLike = document.createElement("img");
-                imgLike.classList.add("like");
-                imgLike.dataset.id = prodotto.id;
-
-                imgLike.src = urlImg + "/clicked_favourite.png";
-                imgLike.dataset.pref = 1;
-                imgLike.addEventListener("click", rimuoviDaPaginaPreferito);
-
-                boxSingolo.appendChild(imgLike);
-
-                const img = document.createElement("img");
-                img.src = prodotto.image;
-                boxSingolo.appendChild(img);
-
-                const titolo = document.createElement("h4");
-                titolo.textContent = prodotto.title;
-                boxSingolo.appendChild(titolo);
-
-                const categoria = document.createElement("span");
-                categoria.textContent = prodotto.category;
-                boxSingolo.appendChild(categoria);
-
-                const prezzo = document.createElement("span");
-                prezzo.textContent = prodotto.price + "€";
-                boxSingolo.appendChild(prezzo);
-
-                const bottoneCarrello = document.createElement("div");
-                bottoneCarrello.classList.add("btn-carrello");
-                bottoneCarrello.textContent = "Aggiungi al carrello";
-                boxSingolo.appendChild(bottoneCarrello);
-
-                boxFoto.appendChild(boxSingolo);
-            }
-
-            sezionePreferiti.appendChild(boxFoto);
-
         }
+
+        const sezionePreferiti = document.querySelector("#sezione-preferiti");
+
+        const boxFoto = document.createElement("div");
+        boxFoto.id = "box-fotos-pref";
+
+        for (let j = 0; j < oggettiPreferiti.length; j++) {
+
+            const prodotto = oggettiPreferiti[j];
+
+            const boxSingolo = document.createElement("div");
+            boxSingolo.classList.add("img-box-fotos-pref");
+            boxSingolo.id = "prodotto_" + prodotto.id;
+
+            const imgLike = document.createElement("img");
+            imgLike.classList.add("like");
+            imgLike.dataset.id = prodotto.id;
+
+            imgLike.src = urlImg + "/clicked_favourite.png";
+            imgLike.dataset.pref = 1;
+            imgLike.addEventListener("click", rimuoviDaPaginaPreferito);
+
+            boxSingolo.appendChild(imgLike);
+
+            const img = document.createElement("img");
+            img.src = prodotto.image;
+            boxSingolo.appendChild(img);
+
+            const titolo = document.createElement("h4");
+            titolo.textContent = prodotto.title;
+            boxSingolo.appendChild(titolo);
+
+            const categoria = document.createElement("span");
+            categoria.textContent = prodotto.category;
+            boxSingolo.appendChild(categoria);
+
+            const prezzo = document.createElement("span");
+            prezzo.textContent = prodotto.price + "€";
+            boxSingolo.appendChild(prezzo);
+
+            const bottoneCarrello = document.createElement("div");
+            bottoneCarrello.classList.add("btn-carrello");
+            bottoneCarrello.textContent = "Aggiungi al carrello";
+            boxSingolo.appendChild(bottoneCarrello);
+
+            boxFoto.appendChild(boxSingolo);
+        }
+
+        sezionePreferiti.appendChild(boxFoto);
 
     }
+
 
 }
 
@@ -576,35 +572,24 @@ function rimuoviDaPaginaPreferito(event) {
     likeProdPref.dataset.pref = 0;
     const idProdotto = likeProdPref.dataset.id;
 
-    const form = document.createElement("form");
-
-    const csrfInput = document.createElement("input");
-    csrfInput.type = "hidden";
-    csrfInput.name = "_token";
-    csrfInput.value = document.querySelector('meta[name="csrf-token"]').content;
-    form.appendChild(csrfInput);
-
-    const inputForm = document.createElement("input");
-    inputForm.type = "text";
-    inputForm.name = "prodotto_id";
-    inputForm.value = idProdotto;
-
-    form.appendChild(inputForm);
-
-    const inputForm2 = document.createElement("input");
-    inputForm2.type = "text";
-    inputForm2.name = "azione";
-    inputForm2.value = likeProdPref.dataset.pref;
-
-    form.appendChild(inputForm2);
+    const formData = new FormData();
+    formData.append('_token', document.querySelector('meta[name="csrf-token"]').content);
+    formData.append('prodotto_id', idProdotto);
+    formData.append('azione', likeProdPref.dataset.pref);
 
     const form_data = {
         method: 'post',
-        body: new FormData(form)
+        body: formData
     };
+
     fetch("preferiti/gestione_preferiti", form_data)
-        .then(response => response.text())
-        .then(testoRisposta => console.log("Risposta del server:", testoRisposta));
+        .then(SuccessoRichiesta, ErroreDiRete)
+        .then(function (risposta) {
+            if (risposta == null)
+                console.log("Errore di rete.");
+            else
+                console.log(risposta.status);
+        });
 
 
     const prodPref = document.querySelector("#prodotto_" + idlikeProdPref);

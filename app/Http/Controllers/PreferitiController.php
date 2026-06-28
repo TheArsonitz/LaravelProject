@@ -20,7 +20,7 @@ class PreferitiController extends Controller
             return view('preferiti', ['auth' => $auth, 'nome' => session('nome'), 'paese' => $paeseUtente]);
         }
 
-        return view('preferiti', ['auth' => $auth, 'nome' => null, 'paese' => null]);
+        return view('preferiti', ['auth' => $auth]);
 
     }
 
@@ -66,7 +66,7 @@ class PreferitiController extends Controller
             return ['status' => 'successo'];
         }
 
-        return ['status' => 'errore_autenticazione_utente'];
+        return ['status' => 'errore autenticazione'];
 
     }
 }
